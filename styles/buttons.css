@@ -50,7 +50,7 @@
 }
 
 /* Button Alert Outline */
-.button-brand-outline {
+.button-alert-outline {
   padding: 0.25rem 1rem;
   background-color: transparent;
   outline: 1px var(--color-alert);
@@ -62,7 +62,7 @@
   font-weight: var(--semi-bold);
 }
 
-.button-brand-outline:hover {
+.button-alert-outline:hover {
   outline: none;
   background-color: var(--color-alert);
   color: var(--color-default);
