@@ -7,6 +7,8 @@
   width: fit-content;
   height: fit-content;
   border-radius: var(--border-radius-round);
+  font-size: var(--font-size-4);
+  font-weight: var(--semi-bold);
 }
 
 .button-brand:hover {
@@ -22,6 +24,8 @@
   width: fit-content;
   height: fit-content;
   border-radius: var(--border-radius-round);
+  font-size: var(--font-size-4);
+  font-weight: var(--semi-bold);
 }
 
 .button-brand-outline:hover {
@@ -37,14 +41,36 @@
   height: fit-content;
   color: var(--color-default);
   border-radius: var(--border-radius-round);
+  font-size: var(--font-size-4);
+  font-weight: var(--semi-bold);
 }
 
 .button-confirm:hover {
   background-color: var(--color-brand-2);
 }
 
+<<<<<<< HEAD
 .disabled-button {
   cursor: default;
   background-color: var(--disabled-button) !important;
   color: var(--color-grey-7) !important;
+=======
+/* Button Alert Outline */
+.button-alert-outline {
+  padding: 0.25rem 1rem;
+  background-color: transparent;
+  outline: 1px var(--color-alert);
+  color: var(--color-alert);
+  width: fit-content;
+  height: fit-content;
+  border-radius: var(--border-radius-round);
+  font-size: var(--font-size-4);
+  font-weight: var(--semi-bold);
+}
+
+.button-alert-outline:hover {
+  outline: none;
+  background-color: var(--color-alert);
+  color: var(--color-default);
+>>>>>>> b73b09a11d86d9be5fdd7ae1b64d1a61fb1085d4
 }
