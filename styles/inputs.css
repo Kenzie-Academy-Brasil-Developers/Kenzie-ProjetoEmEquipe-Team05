@@ -1,0 +1,10 @@
+input {
+    border: none;
+    outline: 1px solid var(--color-brand-input);
+    padding: 0.375rem 0.625rem;
+    border-radius: var(--border-radius-round);
+}
+
+input::placeholder {
+    color: var(--color-brand-input);
+}

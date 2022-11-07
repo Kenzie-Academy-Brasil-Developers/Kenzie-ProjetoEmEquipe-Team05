@@ -1,0 +1,111 @@
+/* Modal Wrapper */
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
+
+/* Toggle Modal */
+.show-modal {
+  display: flex;
+}
+
+/* Modal Box */
+.modal {
+  position: relative;
+  width: 520px;
+  height: 380px;
+  background-color: var(--color-brand-3);
+  padding: 42px 0px 12px 0px;
+  border-radius: var(--border-radius-1);
+}
+
+/* Modal Close Button */
+#close-modal {
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Modal Inner Container */
+.modal-container {
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content Container */
+.modal-content {
+  width: fit-content;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: auto;
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Modal Body */
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Modal Footer */
+.modal-footer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 12px;
+}
+
+/* Modal Elements Adjustments */
+.modal button {
+  width: 100%;
+}
+
+.modal input {
+  width: 100%;
+}
+
+/* Mobile */
+@media only screen and (max-width: 991px) {
+.modal {
+    max-width: 95%;
+    max-height: 95%;
+}
+  }

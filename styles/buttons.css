@@ -1,0 +1,44 @@
+/* ---------------- Buttons ----------------*/
+/* Button Brand */
+.button-brand {
+  padding: 0.25rem 1rem;
+  background-color: var(--color-brand-3);
+  color: var(--color-default);
+  width: fit-content;
+  height: fit-content;
+  border-radius: var(--border-radius-round);
+}
+
+.button-brand:hover {
+  background-color: var(--color-brand-2);
+}
+
+/* Button Brand Outline */
+.button-brand-outline {
+  padding: 0.25rem 1rem;
+  background-color: transparent;
+  outline: 1px var(--color-brand-3);
+  color: var(--color-brand-3);
+  width: fit-content;
+  height: fit-content;
+  border-radius: var(--border-radius-round);
+}
+
+.button-brand-outline:hover {
+  outline: 1px var(--color-brand-2);
+  color: var(--color-brand-2);
+}
+
+/* Button Confirm */
+.button-confirm {
+  padding: 0.25rem 1rem;
+  background-color: var(--color-brand-1);
+  width: fit-content;
+  height: fit-content;
+  color: var(--color-default);
+  border-radius: var(--border-radius-round);
+}
+
+.button-confirm:hover {
+  background-color: var(--color-brand-2);
+}
