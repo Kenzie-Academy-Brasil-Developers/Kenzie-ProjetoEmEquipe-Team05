@@ -1,6 +1,12 @@
+/* Export */
+export { loginRequest, createUser, getAllUsers, getAllMyProfile, updateProfile, deleteProfile, createPet, getAllPets, getAllMyPets, updatePet, deletePetById, createAdoption, getAllAdoptions, getAdoptionById, getMyAdoptions, updateAdoption, deleteAdoption}
+
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com"
 
-async function loginRequest ( body){
+
+/* --------------------------------- Requests --------------------------------- */
+/* Login */
+async function loginRequest (body){
     try {
         const request = await fetch (`${baseUrl}/session/login`,{
             method: "POST",
@@ -17,6 +23,7 @@ async function loginRequest ( body){
     }
 }
 
+/* Users */
 async function createUser (body){
     try {
         const request = await fetch (`${baseUrl}/users`,{
@@ -100,6 +107,7 @@ async function deleteProfile (token){
     }
 }
 
+/* Pets */
 async function createPet (token, body){
     try {
         const request = await fetch (`${baseUrl}/pets`,{
@@ -184,6 +192,7 @@ async function deletePetById (token, id){
     }
 }
 
+/* Adoptions */
 async function createAdoption (token, body){
     try {
         const request = await fetch (`${baseUrl}/adoptions`,{
@@ -283,5 +292,3 @@ async function deleteAdoption (token, id){
         console.loge(error)
     }
 }
-
-
