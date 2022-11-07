@@ -10,6 +10,7 @@ function createModalDeleteAccount() {
     neverMindButton.innerText = "Não desejo deletar minha conta"
     neverMindButton.classList = "button-brand text-1-semibold"
     deleteAccountButton.innerText = "Quero deletar minha conta"
-    deleteAccountButton.classList = ""
+    deleteAccountButton.classList = "button-alert-outline"
+    inputList.append(neverMindButton, deleteAccountButton)
 }
 createModalDeleteAccount()
