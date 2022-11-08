@@ -1,12 +1,12 @@
-
+import { loginRequest } from "./requests.js"
 function createModalLogin() {
-    let modalTitle = document.getElementById("modal-title")
+    const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Login"
 
-    let inputList = document.getElementById("input-list")
-    let inputEmail = document.createElement("input")
-    let inputPassword = document.createElement("input")
-    let loginButton = document.createElement("button")
+    const inputList = document.getElementById("input-list")
+    const inputEmail = document.createElement("input")
+    const inputPassword = document.createElement("input")
+    const loginButton = document.createElement("button")
 
     inputEmail.type = "email"
     inputEmail.placeholder = "E-mail"
@@ -17,7 +17,7 @@ function createModalLogin() {
 
     inputList.append(inputEmail, inputPassword, loginButton)
 
-    let modalFooterText = document.getElementById("modal-footer-text")
+    const modalFooterText = document.getElementById("modal-footer-text")
     modalFooterText.innerHTML = `Já tem cadastro? <a href="">Clique aqui</a> para logar`
 
     if (inputEmail.value == "" || inputPassword.value == "") {
@@ -25,7 +25,7 @@ function createModalLogin() {
         loginButton.classList.add("disabled-button")
     }
 
-    let arrayInputs = [inputEmail, inputPassword]
+    const arrayInputs = [inputEmail, inputPassword]
     arrayInputs.forEach(input => {
         input.addEventListener('input', () => {
             if (inputEmail.value == "" || inputPassword.value == "") {
@@ -37,6 +37,15 @@ function createModalLogin() {
                 loginButton.classList.remove("disabled-button")
             }
         })
+    })
+
+    loginButton.addEventListener('click', (e) => {
+        e.preventDefault()
+        const userInfo = {
+            email: inputEmail.value,
+            password: inputPassword.value
+        }
+        loginRequest(userInfo)
     })
 }
 createModalLogin()

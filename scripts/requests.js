@@ -16,13 +16,14 @@ async function loginRequest (body){
             body: JSON.stringify(body)
         })
         const response = await request.json()
+        localStorage.setItem("kenzieAdopt", response.token)
         console.log(response)
 
     } catch (error) {
         console.loge(error)
     }
 }
-
+ 
 /* Users */
 async function createUser (body){
     try {
