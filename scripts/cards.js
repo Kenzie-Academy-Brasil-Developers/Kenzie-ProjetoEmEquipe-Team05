@@ -1,4 +1,5 @@
 export { horizontalCard }
+import { createModalUpdatePet } from "./modalUpdatePet.js"
 
 function horizontalCard(element) {
     const wrapper = document.querySelector('.card-wrapper')
@@ -23,7 +24,7 @@ function horizontalCard(element) {
     cardContent.append(cardBody, cardFooter)
 
     /* Card Header */
-    cardHeader.src = "https://conteudo.imguol.com.br/c/noticias/60/2021/12/27/cachorro-chihuahua-espantado-assustado-1640616560301_v2_750x421.jpg.webp"
+    cardHeader.src = element.avatar_url
 
     /* Card Body */
     const name = document.createElement('p')
@@ -44,6 +45,14 @@ function horizontalCard(element) {
     update.className = 'button-brand'
     update.innerText = 'Atualizar'
 
+    update.addEventListener('click', (e) => {
+        e.preventDefault()
+        const inputList = document.getElementById("input-list")
+        inputList.innerHTML = ""
+        const modal = document.getElementById("modal")
+        modal.classList.toggle('show-modal')
+        createModalUpdatePet(element.id)
+    })
     cardFooter.appendChild(update)
 }
 
