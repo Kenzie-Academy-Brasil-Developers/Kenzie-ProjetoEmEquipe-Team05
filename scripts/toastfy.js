@@ -10,7 +10,6 @@ function createToastfySuccess(message){
     }
     
 function createToastfyFailed(message){
-    console.log("aqi")
     const div = document.createElement("div")
     const pMessage = document.createElement("p")
     pMessage.innerText = message
