@@ -1,4 +1,4 @@
-function createToastfySuccess(message) {
+function createToastfySuccess(message){
     const div = document.createElement("div")
     const pMessage = document.createElement("p")
 
@@ -7,9 +7,9 @@ function createToastfySuccess(message) {
     div.append(pMessage)
 
     return div
-}
-
-function createToastfyFailed(message) {
+    }
+    
+function createToastfyFailed(message){
     const div = document.createElement("div")
     const pMessage = document.createElement("p")
     pMessage.innerText = message
