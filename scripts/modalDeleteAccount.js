@@ -12,5 +12,11 @@ function createModalDeleteAccount() {
     deleteAccountButton.innerText = "Quero deletar minha conta"
     deleteAccountButton.classList = "button-alert-outline"
     inputList.append(neverMindButton, deleteAccountButton)
+
+    let token = localStorage.getItem("kenzieAdopt")
+    console.log(token)
+    deleteAccountButton.addEventListener('click', () => {
+        deleteProfile(token)
+    })
 }
 createModalDeleteAccount()

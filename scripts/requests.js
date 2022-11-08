@@ -101,6 +101,7 @@ async function deleteProfile (token){
             }
         })
         const response = await request.json()
+        localStorage.removeItem("kenzieAdopt")
         console.log(response)
 
     } catch (error) {
