@@ -11,7 +11,6 @@ function createToastfySuccess(message){
     }
     
 function createToastfyFailed(message){
-
     const div = document.createElement("div")
     const pMessage = document.createElement("p")
     pMessage.innerText = message

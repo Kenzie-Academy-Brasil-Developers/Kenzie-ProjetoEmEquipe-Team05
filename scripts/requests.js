@@ -176,9 +176,7 @@ async function getAllPets() {
         const request = await fetch(`${baseUrl}/pets`, {
             method: "GET",
         })
-
         const response = await request.json()
-
         console.log(response)
 
         return response
