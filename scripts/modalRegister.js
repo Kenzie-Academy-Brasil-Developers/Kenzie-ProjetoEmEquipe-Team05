@@ -6,15 +6,15 @@ import { createUser } from "./requests.js"
 
 /* Code */
 function createRegisterModal() {
-    const modalTitle = document.getElementById("modal-title")
+    let modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Cadastrar"
 
-    const inputList = document.getElementById("input-list")
-    const inputUsername = document.createElement("input")
-    const inputEmail = document.createElement("input")
-    const inputPassword = document.createElement("input")
-    const inputAvatar = document.createElement("input")
-    const registerButton = document.createElement("button")
+    let inputList = document.getElementById("input-list")
+    let inputUsername = document.createElement("input")
+    let inputEmail = document.createElement("input")
+    let inputPassword = document.createElement("input")
+    let inputAvatar = document.createElement("input")
+    let registerButton = document.createElement("button")
 
     inputUsername.type = "text" 
     inputUsername.placeholder = "Nome"
@@ -26,10 +26,10 @@ function createRegisterModal() {
     inputAvatar.placeholder = "Avatar?"
     registerButton.innerText = "Cadastrar"
     registerButton.classList = "button-brand text-1-semibold"
-        
+
     inputList.append(inputUsername, inputEmail, inputPassword, inputAvatar, registerButton)
 
-    const modalFooterText = document.getElementById("modal-footer-text")
+    let modalFooterText = document.getElementById("modal-footer-text")
     modalFooterText.innerHTML = `Não tem cadastro? <a href="">Clique aqui</a> para se cadastrar`
 
 
@@ -38,7 +38,7 @@ function createRegisterModal() {
         registerButton.classList.add("disabled-button")
     }
 
-    const arrayInputs = [inputUsername, inputEmail, inputPassword]
+    let arrayInputs = [inputUsername, inputEmail, inputPassword]
     arrayInputs.forEach(input => {
         input.addEventListener('input', () => {
             if (inputUsername.value == "" || inputEmail.value == "" || inputPassword.value == "") {
@@ -46,7 +46,7 @@ function createRegisterModal() {
                 registerButton.classList.add("disabled-button")
             }
             else{
-                registerButton.disabled = false
+                registerButton.disabled == false
                 registerButton.classList.remove("disabled-button")
             }
         })
@@ -62,5 +62,6 @@ function createRegisterModal() {
         createUser(userInfo)
     })
 }
+
 
 

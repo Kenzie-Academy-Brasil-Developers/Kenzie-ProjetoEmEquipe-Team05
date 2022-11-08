@@ -17,12 +17,16 @@ async function loginRequest(body) {
         const response = await request.json()
         localStorage.setItem("kenzieAdopt", response.token)
         console.log(response)
-
+        if(response.ok){
+            setTimeout(()=> {window.location.href("/pages/my-profile/profile.html")}, 1000) 
+        } else{
+            alert("algo deu errado")
+        }
     } catch (error) {
         console.loge(error)
     }
 }
- 
+
 /* Users */
 async function createUser(body) {
     try {
@@ -127,7 +131,7 @@ async function createPet(token, body) {
     }
 }
 
-async function getAllPets() {
+async function getAllPets (){
     try {
         const request = await fetch(`${baseUrl}/pets`, {
             method: "GET",
@@ -136,6 +140,8 @@ async function getAllPets() {
         const response = await request.json()
 
         console.log(response)
+
+        return response
 
     } catch (error) {
         console.loge(error)
