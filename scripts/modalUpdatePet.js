@@ -1,5 +1,7 @@
+/* Import */
 import { updatePet } from "./requests.js"
 
+/* Code */
 function createModalUpdatePet(id) {
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Atualizar pet"

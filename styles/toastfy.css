@@ -12,8 +12,6 @@
   position: fixed;
   animation: toastIt 4000ms ease-in forwards;
   padding: 1.25rem 2.25rem;
-  top: 0;
-  left: 0;
 }
 
 .toast-green {
@@ -29,7 +27,6 @@
   height: fit-content;
   animation: toastIt 4000ms ease-in forwards;
   padding: 1.25rem 2.25rem;
-  
 }
 
 @keyframes toastIt {
