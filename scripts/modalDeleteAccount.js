@@ -1,11 +1,12 @@
+export { createModalDeleteAccount }
 
 function createModalDeleteAccount() {
-    let modalTitle = document.getElementById("modal-title")
+    const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Deseja mesmo deletar sua conta?"
 
-    let inputList = document.getElementById("input-list")
-    let neverMindButton = document.createElement("button")
-    let deleteAccountButton = document.createElement("button")
+    const inputList = document.getElementById("input-list")
+    const neverMindButton = document.createElement("button")
+    const deleteAccountButton = document.createElement("button")
 
     neverMindButton.innerText = "Não desejo deletar minha conta"
     neverMindButton.classList = "button-brand text-1-semibold"
@@ -13,4 +14,3 @@ function createModalDeleteAccount() {
     deleteAccountButton.classList = "button-alert-outline"
     inputList.append(neverMindButton, deleteAccountButton)
 }
-createModalDeleteAccount()

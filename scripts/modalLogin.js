@@ -1,4 +1,10 @@
+/* Import */
 import { loginRequest } from "./requests.js"
+
+/* Export */
+export { createModalLogin }
+
+/* Code */
 function createModalLogin() {
 
     const modalTitle = document.getElementById("modal-title")
@@ -49,6 +55,3 @@ function createModalLogin() {
         loginRequest(userInfo)
     })
 }
-
-
-export {createModalLogin}
