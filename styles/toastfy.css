@@ -12,7 +12,8 @@
   position: fixed;
   animation: toastIt 4000ms ease-in forwards;
   padding: 1.25rem 2.25rem;
-  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .toast-green {
@@ -26,26 +27,26 @@
   justify-content: center;
   width: 250px;
   height: fit-content;
-  position: fixed;
   animation: toastIt 4000ms ease-in forwards;
   padding: 1.25rem 2.25rem;
+  
 }
 
 @keyframes toastIt {
   0% {
     right: 30px;
-    bottom: -150px;
+    top: -150px;
   }
   25% {
     right: 30px;
-    bottom: 10px;
+    top: 10px;
   }
   50% {
     right: 30px;
-    bottom: 10px;
+    top: 10px;
   }
   100% {
     right: 30px;
-    bottom: -150px;
+    top: -150px;
   }
 }
