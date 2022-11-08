@@ -16,10 +16,13 @@ async function loginRequest(body) {
             body: JSON.stringify(body)
         })
         const response = await request.json()
-        
-        if(request.ok){
+
+        if (request.ok) {
             localStorage.setItem("kenzieAdopt", response.token)
-            setTimeout(()=> {window.location.href("/pages/my-profile/profile.html")}, 1000) 
+            setTimeout(() => {
+                createToastfySuccess('sucesso')
+                window.location.href = "/pages/my-profile/profile.html"
+            }, 1000)
         } else {
             const bodyPage = document.querySelector("body")
             bodyPage.appendChild(createToastfyFailed("Usuário ou senha inválidos"))
@@ -41,7 +44,8 @@ async function createUser(body) {
         })
         const response = await request.json()
         const bodyPage = document.querySelector("body")
-        if (response.ok) {
+
+        if (request.ok) {
             bodyPage.appendChild(createToastfySuccess("Usuário criado com sucesso"))
             //verificar qual pagina ira
             //setTimeout(() => { window.location.href("/pages/") }, 4000)
@@ -100,7 +104,7 @@ async function updateProfile(token, body) {
         const response = await request.json()
         console.log(response)
         const bodyPage = document.querySelector("body")
-        if (response.ok) {
+        if (request.ok) {
             bodyPage.appendChild(createToastfySuccess("Usuário alterado com sucesso"))
             //verificar qual pagina ira
             //setTimeout(() => { window.location.href("/pages/") }, 4000)
@@ -143,7 +147,7 @@ async function createPet(token, body) {
         })
         const response = await request.json()
         const bodyPage = document.querySelector("body")
-        if (response.ok) {
+        if (request.ok) {
             bodyPage.appendChild(createToastfySuccess("Pet criado com sucesso"))
             //verificar qual pagina ira
             //setTimeout(() => { window.location.href("/pages/") }, 4000)
@@ -204,7 +208,7 @@ async function updatePet(token, id, body) {
         const response = await request.json()
 
         const bodyPage = document.querySelector("body")
-        if (response.ok) {
+        if (request.ok) {
             bodyPage.appendChild(createToastfySuccess("Pet atualizado com sucesso"))
             //verificar qual pagina ira
             //setTimeout(() => { window.location.href("/pages/") }, 4000)
@@ -229,7 +233,7 @@ async function deletePetById(token, id) {
         const response = await request.json()
 
         const bodyPage = document.querySelector("body")
-        if (response.ok) {
+        if (request.ok) {
             bodyPage.appendChild(createToastfySuccess("Pet deletado com sucesso"))
             //verificar qual pagina ira
             //setTimeout(() => { window.location.href("/pages/") }, 4000)
@@ -256,7 +260,7 @@ async function createAdoption(token, body) {
         })
         const response = await request.json()
         const bodyPage = document.querySelector("body")
-        if (response.ok) {
+        if (request.ok) {
             bodyPage.appendChild(createToastfySuccess("Adoção criada com sucesso"))
             //verificar qual pagina ira
             //setTimeout(() => { window.location.href("/pages/") }, 4000)
@@ -329,9 +333,9 @@ async function updateAdoption(token, id, body) {
             body: JSON.stringify(body)
         })
         const response = await request.json()
-        
+
         const bodyPage = document.querySelector("body")
-        if (response.ok) {
+        if (request.ok) {
             bodyPage.appendChild(createToastfySuccess("Adoção criada com sucesso"))
             //verificar qual pagina ira
             //setTimeout(() => { window.location.href("/pages/") }, 4000)
@@ -355,7 +359,7 @@ async function deleteAdoption(token, id) {
         })
         const response = await request.json()
         const bodyPage = document.querySelector("body")
-        if (response.ok) {
+        if (request.ok) {
             bodyPage.appendChild(createToastfySuccess("Adoção deletada com sucesso"))
             //verificar qual pagina ira
             //setTimeout(() => { window.location.href("/pages/") }, 4000)
