@@ -53,11 +53,12 @@ function createRegisterModal() {
                 registerButton.classList.add("disabled-button")
             }
             else{
-                registerButton.disabled == false
+                registerButton.disabled = false
                 registerButton.classList.remove("disabled-button")
             }
         })
     })
+    console.log(registerButton)
     registerButton.addEventListener('click', (e) => {
         e.preventDefault()
         const userInfo = {

@@ -15,15 +15,14 @@ async function loginRequest(body) {
             body: JSON.stringify(body)
         })
         const response = await request.json()
-        localStorage.setItem("kenzieAdopt", response.token)
-        console.log(response)
-        if(response.ok){
-            setTimeout(()=> {window.location.href("/pages/my-profile/profile.html")}, 1000) 
+        if(request.ok){
+            localStorage.setItem("kenzieAdopt", response.token)
+            window.location.href = "/pages/my-profile/profile.html"
         } else{
             alert("algo deu errado")
         }
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -41,7 +40,7 @@ async function createUser(body) {
         console.log(response)
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -57,7 +56,7 @@ async function getAllUsers(token) {
         console.log(response)
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -74,7 +73,7 @@ async function getAllMyProfile(token) {
         return response
         
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -92,7 +91,7 @@ async function updateProfile(token, body) {
         console.log(response)
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -109,7 +108,7 @@ async function deleteProfile(token) {
         console.log(response)
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -128,7 +127,7 @@ async function createPet(token, body) {
         console.log(response)
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -145,7 +144,7 @@ async function getAllPets (){
         return response
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -162,7 +161,7 @@ async function getAllMyPets(token) {
         console.log(response)
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -180,7 +179,7 @@ async function updatePet(token, id, body) {
         console.log(response)
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -196,7 +195,7 @@ async function deletePetById(token, id) {
         console.log(response)
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -215,7 +214,7 @@ async function createAdoption(token, body) {
         console.log(response)
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -231,7 +230,7 @@ async function getAllAdoptions(token) {
         console.log(response)
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -247,7 +246,7 @@ async function getAdoptionById(token, id) {
         console.log(response)
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -263,7 +262,7 @@ async function getMyAdoptions(token) {
         console.log(response)
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -281,7 +280,7 @@ async function updateAdoption(token, id, body) {
         console.log(response)
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -297,6 +296,6 @@ async function deleteAdoption(token, id) {
         console.log(response)
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
