@@ -3,8 +3,7 @@ function closeModal() {
     const modal = document.getElementById("modal")
 
     closeModalButton.addEventListener('click', () => {
-        
-    modal.classList.toggle('show-modal')
+        modal.classList.toggle("show-modal")
     })
 }
 closeModal()

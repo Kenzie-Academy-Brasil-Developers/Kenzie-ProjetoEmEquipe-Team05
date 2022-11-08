@@ -16,7 +16,7 @@
 
 /* Toggle Modal */
 .show-modal {
-  display: flex;
+  display: flex !important;
 }
 
 /* Modal Box */
