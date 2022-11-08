@@ -47,6 +47,7 @@ function registerNewPet() {
         createModalRegisterPet()
     })
 }
+
 registerNewPet()
 
 function deleteAccount() {
@@ -60,4 +61,5 @@ function deleteAccount() {
         createModalDeleteAccount()
     })
 }
+
 deleteAccount()

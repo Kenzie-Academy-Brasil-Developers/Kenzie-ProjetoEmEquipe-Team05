@@ -14,7 +14,8 @@ function createModalRegisterPet() {
     const inputPetSpecie = document.createElement("input")
     const inputPetAvatar = document.createElement("input")
     const registerPetButton = document.createElement("button")
-
+    const selectionAdoption = document.createElement("select")
+    
     inputPetName.type = "text"
     inputPetName.placeholder = "Nome"
     inputPetBreed.type = "text"
@@ -24,6 +25,7 @@ function createModalRegisterPet() {
     inputPetAvatar.type = "text"
     inputPetAvatar.placeholder = "Avatar"
     registerPetButton.innerText = "Cadastrar"
+    registerPetButton.type = 'submit'
     registerPetButton.classList = "button-brand text-1-semibold"
 
     inputList.append(inputPetName, inputPetBreed, inputPetSpecie, inputPetAvatar, registerPetButton)
@@ -49,13 +51,16 @@ function createModalRegisterPet() {
 
     registerPetButton.addEventListener('click', (e) => {
         e.preventDefault()
+
         const petInfo = {
             name: inputPetName.value,
             bread: inputPetBreed.value,
             species: inputPetSpecie.value,
             avatar_url: inputPetAvatar.value,
         }
+
         createPet(localStorage.getItem("kenzieAdopt"), petInfo)
     })
 }
+
 createModalRegisterPet()
