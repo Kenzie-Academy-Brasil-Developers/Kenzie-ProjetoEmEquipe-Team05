@@ -155,13 +155,10 @@ async function createPet(token, body) {
         })
         const response = await request.json()
         console.log(response)
-        window.location.href = "./profile.html"
+        
         const bodyPage = document.querySelector("body")
         if (request.ok) {
             bodyPage.appendChild(createToastfySuccess("Pet criado com sucesso"))
-            //verificar qual pagina ira
-            //setTimeout(() => { window.location.href("/pages/") }, 4000)
-
         } else {
             bodyPage.appendChild(createToastfyFailed("Nao foi possivel criar o pet"))
         }
