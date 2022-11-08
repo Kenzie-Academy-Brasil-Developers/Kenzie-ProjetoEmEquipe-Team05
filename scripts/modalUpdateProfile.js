@@ -1,4 +1,5 @@
 import { updateProfile } from "./requests.js"
+export {createModalUpdateProfile}
 function createModalUpdateProfile() {
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Atualizar perfil"
@@ -26,4 +27,3 @@ function createModalUpdateProfile() {
         updateProfile(localStorage.getItem("kenzieAdopt"), newUserInfo)
     })
 }
-createModalUpdateProfile()

@@ -1,5 +1,6 @@
 import { horizontalCard } from "../../scripts/cards.js";
 import { getAllMyPets, getAllMyProfile } from "../../scripts/requests.js";
+import { createModalUpdateProfile } from "../../scripts/modalUpdateProfile.js"
 
 const getmyPets = await getAllMyPets(localStorage.getItem('kenzieAdopt'))
 
@@ -19,3 +20,16 @@ async function updateProfile() {
     userName.innerText = myProfile.name
     userEmail.innerText = myProfile.email
 }
+
+function updateUser() {
+    const updateUserButton = document.getElementById("update-user")
+    updateUserButton.addEventListener('click', (e) => {
+        e.preventDefault()
+        const inputList = document.getElementById("input-list")
+        inputList.innerHTML = ""
+        const modal = document.getElementById("modal")
+        modal.classList.toggle('show-modal')
+        createModalUpdateProfile()
+    })
+}
+updateUser()

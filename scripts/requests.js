@@ -89,6 +89,7 @@ async function updateProfile(token, body) {
         })
         const response = await request.json()
         console.log(response)
+        window.location.href = "/pages/my-profile/profile.html"
 
     } catch (error) {
         console.log(error)
@@ -157,7 +158,7 @@ async function getAllMyPets(token) {
             }
         })
         const response = await request.json()
-        console.log(response)
+
         return response
 
     } catch (error) {
