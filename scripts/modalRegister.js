@@ -1,5 +1,10 @@
+/* Export */
 export  { createRegisterModal }
 
+/* Import */
+import { createUser } from "./requests.js"
+
+/* Code */
 function createRegisterModal() {
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Cadastrar"
@@ -21,7 +26,7 @@ function createRegisterModal() {
     inputAvatar.placeholder = "Avatar?"
     registerButton.innerText = "Cadastrar"
     registerButton.classList = "button-brand text-1-semibold"
-
+        
     inputList.append(inputUsername, inputEmail, inputPassword, inputAvatar, registerButton)
 
     const modalFooterText = document.getElementById("modal-footer-text")
@@ -41,9 +46,21 @@ function createRegisterModal() {
                 registerButton.classList.add("disabled-button")
             }
             else{
-                registerButton.disabled == false
+                registerButton.disabled = false
                 registerButton.classList.remove("disabled-button")
             }
         })
     })
+    registerButton.addEventListener('click', (e) => {
+        e.preventDefault()
+        const userInfo = {
+            name: inputUsername.value,
+            email: inputEmail.value,
+            password: inputPassword.value,
+            avatar_url: inputAvatar.value
+        }
+        createUser(userInfo)
+    })
 }
+
+

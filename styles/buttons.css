@@ -49,6 +49,7 @@
   background-color: var(--color-brand-2);
 }
 
+/* Button Disabled */
 .disabled-button {
   cursor: default;
   background-color: var(--disabled-button) !important;

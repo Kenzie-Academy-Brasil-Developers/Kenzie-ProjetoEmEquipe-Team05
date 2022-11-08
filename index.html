@@ -16,8 +16,7 @@
     <title>Kenzie</title>
   </head>
   <body>
-
-     <div class="modal-wrapper">
+    <div class="modal-wrapper" id="modal">
       <div class="modal">
         <svg
           id="close-modal"
@@ -34,17 +33,21 @@
         </svg>
         <div class="modal-container">
           <div class="modal-content" id="modal-content">
-            <div class="modal-header"><p style="color: var(--color-brand-3);" class="title-1-bold" id="modal-title"></p></div>
-            <form class="modal-body" id="input-list">
-            </form>
+            <div class="modal-header">
+              <p
+                style="color: var(--color-brand-3)"
+                class="title-1-bold"
+                id="modal-title"
+              ></p>
+            </div>
+            <form class="modal-body" id="input-list"></form>
             <div class="modal-footer" id="modal-footer">
               <p class="text-4-regular" id="modal-footer-text"></p>
             </div>
           </div>
         </div>
       </div>
-    </div> 
+    </div>
   </body>
-  <script type="module" src="./scripts/modalRegisterPet.js"></script>
   <script type="module" src="./scripts/index.js"></script>
 </html>
