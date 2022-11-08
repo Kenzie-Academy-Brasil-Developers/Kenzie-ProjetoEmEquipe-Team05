@@ -7,6 +7,5 @@ function validateLocal() {
 
     if(localStorage.getItem('user')) {
         const uuid = localStorage.getItem('user')
-        
     }
 }

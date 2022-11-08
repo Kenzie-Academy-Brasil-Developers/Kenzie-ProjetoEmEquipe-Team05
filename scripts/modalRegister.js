@@ -45,8 +45,7 @@ function createRegisterModal() {
             }
         })
     })
-
-    registerButton.addEventListener('click', (e) => {
+   registerButton.addEventListener('click', (e) => {
         e.preventDefault()
         const userInfo = {
             name: inputUsername.value,

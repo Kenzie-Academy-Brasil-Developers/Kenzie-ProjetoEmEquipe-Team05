@@ -1,14 +1,13 @@
 /* Export */
-export { loginRequest, createUser, getAllUsers, getAllMyProfile, updateProfile, deleteProfile, createPet, getAllPets, getAllMyPets, updatePet, deletePetById, createAdoption, getAllAdoptions, getAdoptionById, getMyAdoptions, updateAdoption, deleteAdoption}
+export { loginRequest, createUser, getAllUsers, getAllMyProfile, updateProfile, deleteProfile, createPet, getAllPets, getAllMyPets, updatePet, deletePetById, createAdoption, getAllAdoptions, getAdoptionById, getMyAdoptions, updateAdoption, deleteAdoption }
 
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com"
 
-
-/* --------------------------------- Requests --------------------------------- */
+/* ------------------------------------------------------------------ Requests ------------------------------------------------------------------ */
 /* Login */
-async function loginRequest (body){
+async function loginRequest(body) {
     try {
-        const request = await fetch (`${baseUrl}/session/login`,{
+        const request = await fetch(`${baseUrl}/session/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -25,9 +24,9 @@ async function loginRequest (body){
 }
  
 /* Users */
-async function createUser (body){
+async function createUser(body) {
     try {
-        const request = await fetch (`${baseUrl}/users`,{
+        const request = await fetch(`${baseUrl}/users`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -42,12 +41,12 @@ async function createUser (body){
     }
 }
 
-async function getAllUsers (token){
+async function getAllUsers(token) {
     try {
-        const request = await fetch (`${baseUrl}/users`,{
+        const request = await fetch(`${baseUrl}/users`, {
             method: "GET",
             headers: {
-                "Authorization" : `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             }
         })
         const response = await request.json()
@@ -58,12 +57,12 @@ async function getAllUsers (token){
     }
 }
 
-async function getAllMyProfile (token){
+async function getAllMyProfile(token) {
     try {
-        const request = await fetch (`${baseUrl}/users/profile`,{
+        const request = await fetch(`${baseUrl}/users/profile`, {
             method: "GET",
             headers: {
-                "Authorization" : `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             }
         })
         const response = await request.json()
@@ -74,13 +73,13 @@ async function getAllMyProfile (token){
     }
 }
 
-async function updateProfile (token, body){
+async function updateProfile(token, body) {
     try {
-        const request = await fetch (`${baseUrl}/users/profile`,{
+        const request = await fetch(`${baseUrl}/users/profile`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization" : `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify(body)
         })
@@ -92,12 +91,12 @@ async function updateProfile (token, body){
     }
 }
 
-async function deleteProfile (token){
+async function deleteProfile(token) {
     try {
-        const request = await fetch (`${baseUrl}/users/profile`,{
+        const request = await fetch(`${baseUrl}/users/profile`, {
             method: "DELETE",
             headers: {
-                "Authorization" : `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             }
         })
         const response = await request.json()
@@ -109,13 +108,13 @@ async function deleteProfile (token){
 }
 
 /* Pets */
-async function createPet (token, body){
+async function createPet(token, body) {
     try {
-        const request = await fetch (`${baseUrl}/pets`,{
+        const request = await fetch(`${baseUrl}/pets`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization" : `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify(body)
         })
@@ -127,12 +126,27 @@ async function createPet (token, body){
     }
 }
 
-async function getAllPets (token){
+async function getAllPets() {
     try {
-        const request = await fetch (`${baseUrl}/pets`,{
+        const request = await fetch(`${baseUrl}/pets`, {
+            method: "GET",
+        })
+
+        const response = await request.json()
+
+        console.log(response)
+
+    } catch (error) {
+        console.loge(error)
+    }
+}
+
+async function getAllMyPets(token) {
+    try {
+        const request = await fetch(`${baseUrl}/pets/my_pets`, {
             method: "GET",
             headers: {
-                "Authorization" : `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             }
         })
         const response = await request.json()
@@ -143,29 +157,13 @@ async function getAllPets (token){
     }
 }
 
-async function getAllMyPets (token){
+async function updatePet(token, id, body) {
     try {
-        const request = await fetch (`${baseUrl}/pets/my_pets`,{
-            method: "GET",
-            headers: {
-                "Authorization" : `Bearer ${token}`
-            }
-        })
-        const response = await request.json()
-        console.log(response)
-
-    } catch (error) {
-        console.loge(error)
-    }
-}
-
-async function updatePet (token, id, body){
-    try {
-        const request = await fetch (`${baseUrl}/pets/${id}`,{
+        const request = await fetch(`${baseUrl}/pets/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization" : `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify(body)
         })
@@ -177,12 +175,12 @@ async function updatePet (token, id, body){
     }
 }
 
-async function deletePetById (token, id){
+async function deletePetById(token, id) {
     try {
-        const request = await fetch (`${baseUrl}/pets/${id}`,{
+        const request = await fetch(`${baseUrl}/pets/${id}`, {
             method: "DELETE",
             headers: {
-                "Authorization" : `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             }
         })
         const response = await request.json()
@@ -194,13 +192,13 @@ async function deletePetById (token, id){
 }
 
 /* Adoptions */
-async function createAdoption (token, body){
+async function createAdoption(token, body) {
     try {
-        const request = await fetch (`${baseUrl}/adoptions`,{
+        const request = await fetch(`${baseUrl}/adoptions`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization" : `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify(body)
         })
@@ -212,12 +210,12 @@ async function createAdoption (token, body){
     }
 }
 
-async function getAllAdoptions (token){
+async function getAllAdoptions(token) {
     try {
-        const request = await fetch (`${baseUrl}/adoptions`,{
+        const request = await fetch(`${baseUrl}/adoptions`, {
             method: "GET",
             headers: {
-                "Authorization" : `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             }
         })
         const response = await request.json()
@@ -228,12 +226,12 @@ async function getAllAdoptions (token){
     }
 }
 
-async function getAdoptionById (token,id){
+async function getAdoptionById(token, id) {
     try {
-        const request = await fetch (`${baseUrl}/adoptions/${id}`,{
+        const request = await fetch(`${baseUrl}/adoptions/${id}`, {
             method: "GET",
             headers: {
-                "Authorization" : `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             }
         })
         const response = await request.json()
@@ -244,12 +242,12 @@ async function getAdoptionById (token,id){
     }
 }
 
-async function getMyAdoptions (token){
+async function getMyAdoptions(token) {
     try {
-        const request = await fetch (`${baseUrl}/adoptions/myAdoptions`,{
+        const request = await fetch(`${baseUrl}/adoptions/myAdoptions`, {
             method: "GET",
             headers: {
-                "Authorization" : `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             }
         })
         const response = await request.json()
@@ -260,13 +258,13 @@ async function getMyAdoptions (token){
     }
 }
 
-async function updateAdoption (token, id, body){
+async function updateAdoption(token, id, body) {
     try {
-        const request = await fetch (`${baseUrl}/adoptions/updtae/${id}`,{
+        const request = await fetch(`${baseUrl}/adoptions/updtae/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization" : `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify(body)
         })
@@ -278,12 +276,12 @@ async function updateAdoption (token, id, body){
     }
 }
 
-async function deleteAdoption (token, id){
+async function deleteAdoption(token, id) {
     try {
-        const request = await fetch (`${baseUrl}/adoptions/delete/${id}`,{
+        const request = await fetch(`${baseUrl}/adoptions/delete/${id}`, {
             method: "DELETE",
             headers: {
-                "Authorization" : `Bearer ${token}`
+                "Authorization": `Bearer ${token}`
             }
         })
         const response = await request.json()

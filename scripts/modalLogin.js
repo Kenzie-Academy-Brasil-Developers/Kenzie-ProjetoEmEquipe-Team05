@@ -1,4 +1,6 @@
 import { loginRequest } from "./requests.js"
+export {createModalLogin}
+
 function createModalLogin() {
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Login"
@@ -38,7 +40,6 @@ function createModalLogin() {
             }
         })
     })
-
     loginButton.addEventListener('click', (e) => {
         e.preventDefault()
         const userInfo = {
