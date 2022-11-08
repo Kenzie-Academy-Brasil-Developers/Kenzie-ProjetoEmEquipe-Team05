@@ -35,7 +35,6 @@ export function filterEspecies(arr){
     divBack.addEventListener("click",()=>{
         div.innerHTML = ""
         divBack.classList.remove("div-back-select")
-
     })
     
 }
