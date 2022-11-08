@@ -7,7 +7,7 @@ function createModalUpdateProfile() {
     const inputUsername = document.createElement("input")
     const inputEmail = document.createElement("input")
     const inputAvatar = document.createElement("input")
-    const registerButton = document.createElement("button")
+    const updateButton = document.createElement("button")
 
     inputUsername.type = "text" 
     inputUsername.placeholder = "Nome"
@@ -15,9 +15,9 @@ function createModalUpdateProfile() {
     inputEmail.placeholder = "E-mail"
     inputAvatar.type = "text"
     inputAvatar.placeholder = "Avatar"
-    registerButton.innerText = "Atualizar"
-    registerButton.classList = "button-brand text-1-semibold"
+    updateButton.innerText = "Atualizar"
+    updateButton.classList = "button-brand text-1-semibold"
     
-    inputList.append(inputUsername, inputEmail, inputAvatar, registerButton)
+    inputList.append(inputUsername, inputEmail, inputAvatar, updateButton)
 }
 createModalUpdateProfile()
