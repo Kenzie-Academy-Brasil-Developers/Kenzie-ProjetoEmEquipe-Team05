@@ -157,8 +157,8 @@ async function getAllMyPets(token) {
             }
         })
         const response = await request.json()
-        return response
         console.log(response)
+        return response
 
     } catch (error) {
         console.log(error)
