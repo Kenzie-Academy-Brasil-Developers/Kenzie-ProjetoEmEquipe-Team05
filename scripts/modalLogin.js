@@ -1,3 +1,4 @@
+export {createModalLogin}
 
 function createModalLogin() {
     const modalTitle = document.getElementById("modal-title")
@@ -39,4 +40,3 @@ function createModalLogin() {
         })
     })
 }
-createModalLogin()

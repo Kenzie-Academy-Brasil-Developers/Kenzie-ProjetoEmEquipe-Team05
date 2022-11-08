@@ -1,3 +1,4 @@
+export  { createRegisterModal }
 
 function createRegisterModal() {
     const modalTitle = document.getElementById("modal-title")
@@ -46,5 +47,3 @@ function createRegisterModal() {
         })
     })
 }
-createRegisterModal()
-
