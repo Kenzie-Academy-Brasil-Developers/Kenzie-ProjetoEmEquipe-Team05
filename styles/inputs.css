@@ -1,25 +1,10 @@
-/* Input */
 input {
-  border: none;
-  outline: 1px solid var(--color-brand-input);
-  padding: 0.375rem 0.625rem;
-  border-radius: var(--border-radius-round);
-  font-size: var(--font-size-3);
-  font-weight: var(--regular);
-  background-color: transparent;
+    border: none;
+    outline: 1px solid var(--color-brand-input);
+    padding: 0.375rem 0.625rem;
+    border-radius: var(--border-radius-round);
 }
 
 input::placeholder {
-  color: var(--color-brand-input);
-}
-
-/* Select */
-select {
-  border: none;
-  outline: 1px solid var(--color-brand-input);
-  padding: 0.375rem 0.625rem;
-  border-radius: var(--border-radius-round);
-  font-size: var(--font-size-4);
-  font-weight: var(--regular);
-  background-color: transparent;
+    color: var(--color-brand-input);
 }
