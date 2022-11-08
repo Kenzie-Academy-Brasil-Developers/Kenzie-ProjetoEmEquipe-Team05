@@ -1,6 +1,7 @@
 import { validateLocal } from "./localStorage.js";
 import {getAllPets} from "./requests.js"
 import {createModalLogin} from "./modalLogin.js"
+import { createToastfyFailed, createToastfySuccess } from "./toastfy.js";
 
 validateLocal()
 
@@ -15,7 +16,7 @@ pets.forEach(element => {
     const pSpecie = document.createElement("p")
 
     liPets.classList.add("card-vertical")
-    imgPets.classList.add("card-img")
+    imgPets.classList.add("card-header-vertical")
     headerLi.classList.add("card-body")
 
     imgPets.src = element.avatar_url
@@ -25,7 +26,6 @@ pets.forEach(element => {
     headerLi.append(h2NamePet,pSpecie)
     liPets.append(imgPets,headerLi)
     ul.appendChild(liPets)
-
 });
 }
 
@@ -43,3 +43,6 @@ const button = document.querySelector("#button-login")
     }
 
 callModalLogin()
+
+createToastfySuccess('xxx')
+createToastfyFailed('xxx')

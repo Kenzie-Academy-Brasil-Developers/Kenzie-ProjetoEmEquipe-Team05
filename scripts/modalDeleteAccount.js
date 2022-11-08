@@ -16,7 +16,6 @@ function createModalDeleteAccount() {
     deleteAccountButton.classList = "button-alert-outline"
     inputList.append(neverMindButton, deleteAccountButton)
 
-
     const token = localStorage.getItem("kenzieAdopt")
     deleteAccountButton.addEventListener('click', (e) => {
         e.preventDefault()
@@ -26,8 +25,7 @@ function createModalDeleteAccount() {
     neverMindButton.addEventListener('click', (e) => {
         e.preventDefault()
         const modal = document.getElementById("modal")
-        modal.style.display = "none"
+        modal.classList.toggle('show-modal')
     })
 }
-
-
+createModalDeleteAccount()

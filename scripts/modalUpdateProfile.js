@@ -1,3 +1,4 @@
+/* Import */
 import { updateProfile } from "./requests.js"
 export {createModalUpdateProfile}
 function createModalUpdateProfile() {

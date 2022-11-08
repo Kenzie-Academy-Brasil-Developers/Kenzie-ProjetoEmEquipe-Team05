@@ -1,5 +1,9 @@
+/* Import */
 import { createPet } from "./requests.js"
+
 export { createModalRegisterPet } 
+
+/* Code */
 function createModalRegisterPet() {
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Cadastrar pet"
