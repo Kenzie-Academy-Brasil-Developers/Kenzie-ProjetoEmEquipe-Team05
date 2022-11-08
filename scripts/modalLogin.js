@@ -1,16 +1,18 @@
 /* Import */
 import { loginRequest } from "./requests.js"
+import { createRegisterModal } from "./modalRegister.js"
 
 /* Export */
 export { createModalLogin }
 
 /* Code */
 function createModalLogin() {
+    const inputList = document.getElementById("input-list")
+    inputList.innerHTML = ""
 
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Login"
 
-    const inputList = document.getElementById("input-list")
     const inputEmail = document.createElement("input")
     const inputPassword = document.createElement("input")
     const loginButton = document.createElement("button")
@@ -25,7 +27,14 @@ function createModalLogin() {
     inputList.append(inputEmail, inputPassword, loginButton)
 
     const modalFooterText = document.getElementById("modal-footer-text")
-    modalFooterText.innerHTML = `Já tem cadastro? <a href="">Clique aqui</a> para logar`
+    modalFooterText.innerHTML = `Não tem cadastro? <a href="" id="anchor-click">Clique aqui</a> para se cadastrar`
+
+    const anchor = document.getElementById("anchor-click")
+    anchor.addEventListener('click', (e) => {
+        e.preventDefault()
+        inputList.innerHTML = ""
+        createRegisterModal()
+    })
 
     if (inputEmail.value == "" || inputPassword.value == "") {
         loginButton.disabled = true
