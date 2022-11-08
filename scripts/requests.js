@@ -1,5 +1,6 @@
 /* Export */
 export { loginRequest, createUser, getAllUsers, getAllMyProfile, updateProfile, deleteProfile, createPet, getAllPets, getAllMyPets, updatePet, deletePetById, createAdoption, getAllAdoptions, getAdoptionById, getMyAdoptions, updateAdoption, deleteAdoption }
+import { createModalLogin } from "./modalLogin.js"
 
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com"
 
@@ -38,6 +39,9 @@ async function createUser(body) {
         })
         const response = await request.json()
         console.log(response)
+        const inputList = document.getElementById("input-list")
+        inputList.innerHTML = ""
+        createModalLogin()
 
     } catch (error) {
         console.log(error)
