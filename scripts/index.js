@@ -6,7 +6,6 @@ validateLocal()
 
 async function callGetAllPets (){
 const pets = await getAllPets()
-console.log(pets)
 pets.forEach(element => {
     const ul = document.querySelector("#ul-pets")
     const liPets = document.createElement("li")
