@@ -20,15 +20,15 @@ async function loginRequest(body) {
             body: JSON.stringify(body)
         })
         const response = await request.json()
-
+        const bodyPage = document.querySelector("body")
         if (request.ok) {
+            bodyPage.appendChild(createToastfySuccess('sucesso'))
             localStorage.setItem("kenzieAdopt", response.token)
             setTimeout(() => {
-                createToastfySuccess('sucesso')
                 window.location.href = "/pages/my-profile/profile.html"
             }, 1000)
         } else {
-            const bodyPage = document.querySelector("body")
+        
             bodyPage.appendChild(createToastfyFailed("Usuário ou senha inválidos"))
         }
     } catch (error) {
@@ -55,9 +55,7 @@ async function createUser(body) {
 
         if (request.ok) {
             bodyPage.appendChild(createToastfySuccess("Usuário criado com sucesso"))
-            //verificar qual pagina ira
-            //setTimeout(() => { window.location.href("/pages/") }, 4000)
-
+            setTimeout(() => window.location.href = "../index.html" , 4000)
         } else {
             bodyPage.appendChild(createToastfyFailed("Nao foi possivel criar usuário"))
         }
