@@ -1,4 +1,5 @@
 function createToastfySuccess(message){
+    console.log("aqui")
     const div = document.createElement("div")
     const pMessage = document.createElement("p")
     
