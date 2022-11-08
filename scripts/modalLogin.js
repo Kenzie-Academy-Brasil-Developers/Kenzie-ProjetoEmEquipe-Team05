@@ -1,5 +1,12 @@
+/* Import */
 import { loginRequest } from "./requests.js"
+
+/* Export */
+export { createModalLogin }
+
+/* Code */
 function createModalLogin() {
+
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Login"
 
@@ -18,7 +25,7 @@ function createModalLogin() {
     inputList.append(inputEmail, inputPassword, loginButton)
 
     const modalFooterText = document.getElementById("modal-footer-text")
-    modalFooterText.innerHTML = `Já tem cadastro? <a href="">Clique aqui</a> para logar`
+    modalFooterText.innerHTML = `Não tem cadastro? <a href="">Clique aqui</a> para se cadastrar`
 
     if (inputEmail.value == "" || inputPassword.value == "") {
         loginButton.disabled = true
@@ -48,4 +55,3 @@ function createModalLogin() {
         loginRequest(userInfo)
     })
 }
-createModalLogin()

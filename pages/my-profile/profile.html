@@ -1,13 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/globalStyles.css" />
+    <link rel="stylesheet" href="../../styles/fonts.css" />
+    <link rel="stylesheet" href="../../styles/buttons.css" />
+    <link rel="stylesheet" href="../../styles/inputs.css" />
+    <link rel="stylesheet" href="../../styles/header.css" />
+    <link rel="stylesheet" href="../../styles/footer.css" />
+    <link rel="stylesheet" href="../../styles/modal.css" />
+    <link rel="stylesheet" href="../../styles/cards.css" />
+    <link rel="stylesheet" href="./profile.css" />
     <title>Kenzie - Profile</title>
-</head>
-<body>
-      
-</body>
-<script type="module" src="./profile.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="user-profile">
+        <img
+          class="profile-img"
+          id="profile-img"
+          src="../../src/michael-dam-mEZ3PoFGs_k-unsplash 1.png"
+          alt=""
+        />
+        <div class="user-data">
+          <div class="user-data-header">
+            <h1 class="title-1-bold" style="color: var(--color-brand-3)">
+              Dados pessoais
+            </h1>
+          </div>
+          <div class="user-data-body">
+            <p class="text-1-bold">
+              <strong style="color: var(--color-brand-3)">Nome:</strong>
+              <span id="profile-username">Kenzinha</span>
+            </p>
+            <p class="text-1-bold">
+              <strong style="color: var(--color-brand-3)">E-mail:</strong>
+              <span id="profile-email">kenzinha@kenzie.com.br</span>
+            </p>
+            <p class="text-1-bold">
+              <strong style="color: var(--color-brand-3)"
+                >Data de nascimento:</strong
+              >
+              <span id="profile-birthdate">21/03/2000</span>
+            </p>
+          </div>
+          <div class="user-data-footer">
+            <button class="button-brand">Atualizar Informações</button>
+            <button class="button-alert-outline">Deletar Conta</button>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper-title">
+        <button
+          class="button-brand"
+          style="background-color: var(--color-brand-1)"
+        >
+          Cadastrar novo pet
+        </button>
+      </div>
+      <div class="card-wrapper">
+
+      </div>
+    </div>
+  </body>
+  <script type="module" src="./profile.js"></script>
 </html>
