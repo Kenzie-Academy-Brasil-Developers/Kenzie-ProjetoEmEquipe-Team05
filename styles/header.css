@@ -1,2 +1,21 @@
+
+
+
 @media only screen and (max-width: 991px) {
+    .header-position{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 60px;
+    }
+}
+
+.header-position{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 60px;
+    background-color: var(--color-grey-4);
+    color: var(--color-brand-3);
+    border-bottom: 3px solid #eeeeee;
 }

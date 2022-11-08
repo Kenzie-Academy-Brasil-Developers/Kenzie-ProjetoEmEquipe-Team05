@@ -1,5 +1,6 @@
 import { loginRequest } from "./requests.js"
 function createModalLogin() {
+
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Login"
 
@@ -48,4 +49,6 @@ function createModalLogin() {
         loginRequest(userInfo)
     })
 }
-createModalLogin()
+
+
+export {createModalLogin}
