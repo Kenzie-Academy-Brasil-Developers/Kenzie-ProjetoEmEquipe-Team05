@@ -1,6 +1,8 @@
 import { horizontalCard } from "../../scripts/cards.js";
 import { getAllMyPets, getAllMyProfile } from "../../scripts/requests.js";
 import { createModalUpdateProfile } from "../../scripts/modalUpdateProfile.js"
+import { createModalRegisterPet } from "../../scripts/modalRegisterPet.js"
+import { createModalDeleteAccount } from "../../scripts/modalDeleteAccount.js";
 
 const getmyPets = await getAllMyPets(localStorage.getItem('kenzieAdopt'))
 
@@ -33,3 +35,29 @@ function updateUser() {
     })
 }
 updateUser()
+
+function registerNewPet() {
+    const registerPetButton = document.getElementById("register-pet")
+    registerPetButton.addEventListener('click', (e) => {
+        e.preventDefault()
+        const inputList = document.getElementById("input-list")
+        inputList.innerHTML = ""
+        const modal = document.getElementById("modal")
+        modal.classList.toggle('show-modal')
+        createModalRegisterPet()
+    })
+}
+registerNewPet()
+
+function deleteAccount() {
+    const deleteAccButton = document.getElementById("delete-acc")
+    deleteAccButton.addEventListener('click', (e) => {
+        e.preventDefault()
+        const inputList = document.getElementById("input-list")
+        inputList.innerHTML = ""
+        const modal = document.getElementById("modal")
+        modal.classList.toggle('show-modal')
+        createModalDeleteAccount()
+    })
+}
+deleteAccount()

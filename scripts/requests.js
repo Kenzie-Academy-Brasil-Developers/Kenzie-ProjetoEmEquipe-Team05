@@ -107,6 +107,7 @@ async function deleteProfile(token) {
         const response = await request.json()
         localStorage.removeItem("kenzieAdopt")
         console.log(response)
+        window.location.href = "../../index.html"
 
     } catch (error) {
         console.log(error)
@@ -126,6 +127,7 @@ async function createPet(token, body) {
         })
         const response = await request.json()
         console.log(response)
+        window.location.href = "./profile.html"
 
     } catch (error) {
         console.log(error)
@@ -178,6 +180,7 @@ async function updatePet(token, id, body) {
         })
         const response = await request.json()
         console.log(response)
+        window.location.href = "./profile.html"
 
     } catch (error) {
         console.log(error)
