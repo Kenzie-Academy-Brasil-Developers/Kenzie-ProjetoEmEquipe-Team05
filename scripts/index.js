@@ -1,13 +1,12 @@
 import { validateLocal } from "./localStorage.js";
 import {getAllPets} from "./requests.js"
 import {createModalLogin} from "./modalLogin.js"
+import { filterEspecies } from "./filter.js";
 
 validateLocal()
 
-async function callGetAllPets (){
-const pets = await getAllPets()
-console.log(pets)
-pets.forEach(element => {
+export function callGetAllPets (arr){
+arr.forEach(element => {
     const ul = document.querySelector("#ul-pets")
     const liPets = document.createElement("li")
     const imgPets = document.createElement("img")
@@ -29,9 +28,18 @@ pets.forEach(element => {
 
 });
 }
+const pets = await getAllPets()
+callGetAllPets(pets)
 
-callGetAllPets()
-
+async function callFilter(){
+    const token = localStorage.getItem('token')
+    const newToken = JSON.parse(token)
+    const arr = await getAllPets(newToken.token) 
+    const seta = document.querySelector(".setaSelect")
+    seta.addEventListener("click",()=>{
+        filterEspecies(arr)
+    })
+}
 function callModalLogin(){
     
 const button = document.querySelector("#button-login")
@@ -41,6 +49,6 @@ const button = document.querySelector("#button-login")
          modalWrapper.classList.toggle('show-modal')
          createModalLogin()
     })
-    }
-
+}
+callFilter()
 callModalLogin()
