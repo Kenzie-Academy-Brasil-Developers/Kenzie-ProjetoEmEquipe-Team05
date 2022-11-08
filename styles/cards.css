@@ -63,4 +63,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--color-footer);
+
+}
+.ul-list-home{
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 7.31rem;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+.img-pets{
+  width: 200px;
+  height: 160px;
 }

@@ -48,7 +48,8 @@ button {
 
   /* Color Default */
   --color-default: #ffffff;
-
+   /* color footer  */
+   --color-footer: #a6a8a969;
   /* ---------------- Fonts ----------------*/
   /* Font Size */
   --font-logo: 28px;
