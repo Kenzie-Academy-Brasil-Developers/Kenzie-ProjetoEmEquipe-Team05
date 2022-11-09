@@ -70,3 +70,27 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
 }
+@media only screen and (max-width:991px) {
+  .container{
+    justify-content: center;
+    align-items: center;
+  }
+  .card-wrapper{
+    justify-content: center;
+  }
+  .card-horizontal{
+    align-self: center;
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-default);
+  }
+  .card-header-horizontal{
+    width: 100%;
+  }
+  .header-menu{
+    display: none;
+  }
+}

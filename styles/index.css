@@ -1,10 +1,3 @@
-.card-wrapper {
-  margin: 105px 350px;
-}
-
-.card-wrapper{
-    margin: 40px 350px;
-}
 .card-vertical {
   background-color: var(--color-grey-7);
 }
@@ -27,8 +20,41 @@
   height: 50%;
   border-radius: 4px 4px 0px 0px;
 }
-
-.card-wrapper {
-  gap: 65px;
-  justify-content: space-evenly;
+.conteiner-warpes{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+.container{
+  padding:  0% 20%;
+}
+@media only screen and (max-width: 500px) {
+  .card-vertical{
+    width: 100%;
+  }
+  .card-wrapper{
+    width: 80%;
+  }
+  .box-filtro{
+    width: 80%;
+  }
+  .container{
+    padding: 0% 5%;
+  }
+}
+@media only screen and (max-width:991px){
+  .card-vertical{
+    width: 100%;
+  }
+  .card-wrapper{
+    width: 70%;
+  }
+  .box-filtro{
+    width: 70%;
+  }
+  .header-menu{
+    display: none;
+  }
 }
