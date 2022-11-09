@@ -5,6 +5,7 @@ import { createModalUpdateProfile } from "../../scripts/modalUpdateProfile.js"
 import { createModalRegisterPet } from "../../scripts/modalRegisterPet.js"
 import { createModalDeleteAccount } from "../../scripts/modalDeleteAccount.js";
 import { closeModal } from "../../scripts/closeModal.js";
+import { validateLocal } from "../../scripts/localStorage.js";
 
 /* Declarations */
 const getmyPets = await getAllMyPets(localStorage.getItem('kenzieAdopt'))
@@ -15,6 +16,7 @@ updateUser()
 registerNewPet()
 closeModal()
 deleteAccount()
+
 
 /* Code */
 await getmyPets.forEach(element => {
@@ -67,3 +69,4 @@ function deleteAccount() {
         createModalDeleteAccount()
     })
 }
+

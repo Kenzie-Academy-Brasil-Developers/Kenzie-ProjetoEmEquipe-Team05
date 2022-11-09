@@ -17,6 +17,8 @@ function createRegisterModal() {
     const inputAvatar = document.createElement("input")
     const registerButton = document.createElement("button")
 
+    inputList.innerHTML = ''
+
     inputUsername.type = "text" 
     inputUsername.placeholder = "Nome"
     inputEmail.type = "email"
