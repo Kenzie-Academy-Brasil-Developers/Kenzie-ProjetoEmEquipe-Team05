@@ -8,7 +8,12 @@
 .header-position {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
+  padding: 24px 60px;
+  background-color: var(--color-grey-6);
+=======
   background-color: var(--color-grey-7);
+>>>>>>> 3d8ed10a1382e710fec075a35aa5ef89cb41ecff
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
 }
 
