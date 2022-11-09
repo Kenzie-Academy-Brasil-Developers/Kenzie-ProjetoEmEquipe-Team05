@@ -1,7 +1,6 @@
 /* Import */
 import { updatePet } from "./requests.js"
-
-/* Code */
+export { createModalUpdatePet }
 function createModalUpdatePet(id) {
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Atualizar pet"
@@ -56,4 +55,3 @@ function createModalUpdatePet(id) {
         updatePet(localStorage.getItem("kenzieAdopt"), id, newPetInfo)
     })
 }
-createModalUpdatePet("pegar ID")

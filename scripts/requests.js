@@ -1,3 +1,7 @@
+
+/* Export */
+export { loginRequest, createUser, getAllUsers, getAllMyProfile, updateProfile, deleteProfile, createPet, getAllPets, getAllMyPets, updatePet, deletePetById, createAdoption, getAllAdoptions, getAdoptionById, getMyAdoptions, updateAdoption, deleteAdoption }
+import { createModalLogin } from "./modalLogin.js"
 import { createToastfySuccess, createToastfyFailed } from "./toastfy.js"
 
 
@@ -43,6 +47,10 @@ async function createUser(body) {
             body: JSON.stringify(body)
         })
         const response = await request.json()
+        console.log(response)
+        const inputList = document.getElementById("input-list")
+        inputList.innerHTML = ""
+        createModalLogin()
         const bodyPage = document.querySelector("body")
 
         if (request.ok) {
@@ -101,6 +109,7 @@ async function updateProfile(token, body) {
         })
         const response = await request.json()
         console.log(response)
+        window.location.href = "/pages/my-profile/profile.html"
         const bodyPage = document.querySelector("body")
         if (request.ok) {
             bodyPage.appendChild(createToastfySuccess("Usuário alterado com sucesso"))
@@ -126,6 +135,7 @@ async function deleteProfile(token) {
         })
         const response = await request.json()
         console.log(response)
+        window.location.href = "../../index.html"
 
     } catch (error) {
         console.log(error)
@@ -144,6 +154,8 @@ async function createPet(token, body) {
             body: JSON.stringify(body)
         })
         const response = await request.json()
+        console.log(response)
+        window.location.href = "./profile.html"
         const bodyPage = document.querySelector("body")
         if (request.ok) {
             bodyPage.appendChild(createToastfySuccess("Pet criado com sucesso"))
@@ -185,8 +197,8 @@ async function getAllMyPets(token) {
             }
         })
         const response = await request.json()
+
         return response
-        console.log(response)
 
     } catch (error) {
         console.log(error)
@@ -204,6 +216,8 @@ async function updatePet(token, id, body) {
             body: JSON.stringify(body)
         })
         const response = await request.json()
+        console.log(response)
+        window.location.href = "./profile.html"
 
         const bodyPage = document.querySelector("body")
         if (request.ok) {
@@ -371,23 +385,3 @@ async function deleteAdoption(token, id) {
     }
 }
 
-/* Export */
-export {
-    loginRequest,
-    createUser,
-    getAllUsers,
-    getAllMyProfile,
-    updateProfile,
-    deleteProfile,
-    createPet,
-    getAllPets,
-    getAllMyPets,
-    updatePet,
-    deletePetById,
-    createAdoption,
-    getAllAdoptions,
-    getAdoptionById,
-    getMyAdoptions,
-    updateAdoption,
-    deleteAdoption
-}

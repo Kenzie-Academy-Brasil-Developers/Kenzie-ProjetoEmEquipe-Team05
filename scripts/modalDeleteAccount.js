@@ -1,4 +1,6 @@
+
 import { deleteProfile } from "./requests.js"
+export { createModalDeleteAccount }
 
 function createModalDeleteAccount() {
     const modalTitle = document.getElementById("modal-title")
@@ -23,9 +25,7 @@ function createModalDeleteAccount() {
     neverMindButton.addEventListener('click', (e) => {
         e.preventDefault()
         const modal = document.getElementById("modal")
-        modal.style.display = "none"
+        modal.classList.toggle('show-modal')
     })
 }
-
 createModalDeleteAccount()
-
