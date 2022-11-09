@@ -1,5 +1,54 @@
-export { horizontalCard }
+/* Export */
+export {
+    horizontalCard,
+    verticalCard
+}
+
+/* Import */
 import { createModalUpdatePet } from "./modalUpdatePet.js"
+import { createAdoption, getAllPets } from "./requests.js";
+
+/* Code */
+async function verticalCard() {
+    const pets = await getAllPets()
+    pets.forEach(element => {
+        const ul = document.querySelector("#ul-pets")
+        const liPets = document.createElement("li")
+        const imgPets = document.createElement("img")
+        const headerLi = document.createElement("div")
+        const h2NamePet = document.createElement("h2")
+        const pSpecie = document.createElement("p")
+
+        liPets.classList.add("card-vertical")
+        imgPets.classList.add("card-header-vertical")
+        headerLi.classList.add("card-body")
+
+        imgPets.src = element.avatar_url
+        h2NamePet.innerText = element.name
+        pSpecie.innerText = element.species
+
+        headerLi.append(h2NamePet, pSpecie)
+
+        const user = localStorage.getItem("kenzieAdopt")
+        if (user) {
+            const btnAdopt = document.createElement("button")
+            btnAdopt.classList.add("button-brand-2")
+            btnAdopt.innerText = "Adotar"
+            headerLi.append(btnAdopt)
+
+            btnAdopt.addEventListener('click', (e) => {
+                e.preventDefault()
+                const petId = {
+                    pet_id: element.id
+                }
+                createAdoption(localStorage.getItem("kenzieAdopt"), petId)
+            })
+        }
+
+        liPets.append(imgPets, headerLi)
+        ul.appendChild(liPets)
+    });
+}
 
 function horizontalCard(element) {
     const wrapper = document.querySelector('.card-wrapper')
@@ -56,8 +105,8 @@ function horizontalCard(element) {
     cardFooter.appendChild(update)
 }
 
-function checkAdopt(bolean) {
-    if(bolean == true) {
+function checkAdopt(boolean) {
+    if (boolean == true) {
         return "Sim"
     } else {
         return "Não"

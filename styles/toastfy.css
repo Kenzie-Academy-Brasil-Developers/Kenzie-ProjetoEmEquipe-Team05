@@ -1,3 +1,4 @@
+/* Toast Fail */
 .toast-red {
   background-color: var(--color-alert);
   border-radius: 10px;
@@ -16,6 +17,7 @@
   left: 30px;
 }
 
+/* Toast Success */
 .toast-green {
   background-color: var(--color-confirm);
   border-radius: 10px;
@@ -34,21 +36,22 @@
   left: 30px;
 }
 
+/* Keyframes */
 @keyframes toastIt {
   0% {
-    right: 30px;
+    left: 30px;
     top: -150px;
   }
   25% {
-    right: 30px;
+    left: 30px;
     top: 10px;
   }
   50% {
-    right: 30px;
+    left: 30px;
     top: 10px;
   }
   100% {
-    right: 30px;
+    left: 30px;
     top: -150px;
   }
 }

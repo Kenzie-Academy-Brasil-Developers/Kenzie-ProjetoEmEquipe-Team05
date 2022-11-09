@@ -1,6 +1,7 @@
 /* Import */
 import { createPet } from "./requests.js"
 
+/* Export */
 export { createModalRegisterPet } 
 
 /* Code */
@@ -14,7 +15,6 @@ function createModalRegisterPet() {
     const inputPetSpecie = document.createElement("input")
     const inputPetAvatar = document.createElement("input")
     const registerPetButton = document.createElement("button")
-    const selectionAdoption = document.createElement("select")
     
     inputPetName.type = "text"
     inputPetName.placeholder = "Nome"
@@ -62,5 +62,3 @@ function createModalRegisterPet() {
         createPet(localStorage.getItem("kenzieAdopt"), petInfo)
     })
 }
-
-createModalRegisterPet()

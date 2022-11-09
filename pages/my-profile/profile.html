@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../styles/globalStyles.css" />
+    <link rel="stylesheet" href="../../styles/darkMode.css" />
     <link rel="stylesheet" href="../../styles/fonts.css" />
     <link rel="stylesheet" href="../../styles/buttons.css" />
     <link rel="stylesheet" href="../../styles/inputs.css" />
@@ -12,12 +13,12 @@
     <link rel="stylesheet" href="../../styles/footer.css" />
     <link rel="stylesheet" href="../../styles/modal.css" />
     <link rel="stylesheet" href="../../styles/cards.css" />
+    <link rel="stylesheet" href="../../styles/toastfy.css" />
     <link rel="stylesheet" href="./profile.css" />
     <title>Kenzie - Profile</title>
   </head>
   <body>
-    
-    <!-- Modal Template -->
+    <!-- Modal -->
     <div class="modal-wrapper" id="modal">
       <div class="modal">
         <svg
@@ -49,16 +50,13 @@
           </div>
         </div>
       </div>
-    </div> 
-    <!--modal acaba aqui-->
+    </div>
+
+    <!-- User Profile & Card Wrapper -->
     <div class="container">
+      <!-- User Profile -->
       <div class="user-profile">
-        <img
-          class="profile-img"
-          id="profile-img"
-          src=""
-          alt=""
-        />
+        <img class="profile-img" id="profile-img" src="" alt="" />
         <div class="user-data">
           <div class="user-data-header">
             <h1 class="title-1-bold" style="color: var(--color-brand-3)">
@@ -76,11 +74,17 @@
             </p>
           </div>
           <div class="user-data-footer">
-            <button class="button-brand" id="update-user">Atualizar Informações</button>
-            <button class="button-alert-outline" id="delete-acc">Deletar Conta</button>
+            <button class="button-brand" id="update-user">
+              Atualizar Informações
+            </button>
+            <button class="button-alert-outline" id="delete-acc">
+              Deletar Conta
+            </button>
           </div>
         </div>
       </div>
+
+      <!-- Wrapper Title -->
       <div class="wrapper-title">
         <button
           class="button-brand"
@@ -90,9 +94,12 @@
           Cadastrar novo pet
         </button>
       </div>
+
+      <!-- Card Wrapper -->
       <div class="card-wrapper"></div>
     </div>
   </body>
-  <script src="../../scripts/closeModal.js"></script>
+
+  <!-- Scripts -->
   <script type="module" src="./profile.js"></script>
 </html>

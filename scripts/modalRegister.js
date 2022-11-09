@@ -70,6 +70,3 @@ function createRegisterModal() {
         createUser(userInfo)
     })
 }
-
-
-
