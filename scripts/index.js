@@ -13,6 +13,12 @@ const buttonRegister = document.getElementById("button-register")
 const openHeader = document.getElementById("open-header-btn")
 const closeHeader = document.getElementById("close-header")
 
+/* Call to Action */
+closeModal()
+validateLocal()
+checkTheme()
+verticalCard()
+
 /* Event Listeners */
 darkButton.addEventListener("click", () => {
     changeToDark()
@@ -39,8 +45,3 @@ buttonRegister.addEventListener("click", () => {
     modalWrapper.classList.toggle('show-modal')
     createRegisterModal()
 })
-/* Call to Action */
-closeModal()
-validateLocal()
-checkTheme()
-verticalCard()

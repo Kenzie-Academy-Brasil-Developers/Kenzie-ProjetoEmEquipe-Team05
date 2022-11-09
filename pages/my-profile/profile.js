@@ -5,7 +5,6 @@ import { createModalUpdateProfile } from "../../scripts/modalUpdateProfile.js"
 import { createModalRegisterPet } from "../../scripts/modalRegisterPet.js"
 import { createModalDeleteAccount } from "../../scripts/modalDeleteAccount.js";
 import { closeModal } from "../../scripts/closeModal.js";
-import { validateLocal } from "../../scripts/localStorage.js";
 import { changeToDark, checkTheme } from "../../scripts/darkmode.js";
 
 /* Declarations */
@@ -88,4 +87,3 @@ function deleteAccount() {
         createModalDeleteAccount()
     })
 }
-
