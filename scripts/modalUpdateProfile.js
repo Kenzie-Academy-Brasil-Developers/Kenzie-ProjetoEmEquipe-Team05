@@ -1,6 +1,10 @@
+/* Export */
+export {createModalUpdateProfile}
+
 /* Import */
 import { updateProfile } from "./requests.js"
-export {createModalUpdateProfile}
+
+/* Code */
 function createModalUpdateProfile() {
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Atualizar perfil"

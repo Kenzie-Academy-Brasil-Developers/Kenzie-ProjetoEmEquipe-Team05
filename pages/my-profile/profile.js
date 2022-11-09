@@ -1,16 +1,25 @@
+/* Imports */
 import { horizontalCard } from "../../scripts/cards.js";
 import { getAllMyPets, getAllMyProfile } from "../../scripts/requests.js";
 import { createModalUpdateProfile } from "../../scripts/modalUpdateProfile.js"
 import { createModalRegisterPet } from "../../scripts/modalRegisterPet.js"
 import { createModalDeleteAccount } from "../../scripts/modalDeleteAccount.js";
+import { closeModal } from "../../scripts/closeModal.js";
 
+/* Declarations */
 const getmyPets = await getAllMyPets(localStorage.getItem('kenzieAdopt'))
 
-getmyPets.forEach(element => {
+/* Call to Action */
+updateProfile()
+updateUser()
+registerNewPet()
+closeModal()
+deleteAccount()
+
+/* Code */
+await getmyPets.forEach(element => {
     horizontalCard(element)
 })
-
-updateProfile()
 
 async function updateProfile() {
     const myProfile = await getAllMyProfile(localStorage.getItem('kenzieAdopt'))
@@ -34,7 +43,6 @@ function updateUser() {
         createModalUpdateProfile()
     })
 }
-updateUser()
 
 function registerNewPet() {
     const registerPetButton = document.getElementById("register-pet")
@@ -48,8 +56,6 @@ function registerNewPet() {
     })
 }
 
-registerNewPet()
-
 function deleteAccount() {
     const deleteAccButton = document.getElementById("delete-acc")
     deleteAccButton.addEventListener('click', (e) => {
@@ -61,5 +67,3 @@ function deleteAccount() {
         createModalDeleteAccount()
     })
 }
-
-deleteAccount()

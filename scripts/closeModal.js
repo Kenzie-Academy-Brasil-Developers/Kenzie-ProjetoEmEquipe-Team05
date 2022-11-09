@@ -1,3 +1,7 @@
+/* Export */
+export { closeModal }
+
+/* Code */
 function closeModal() {
     const closeModalButton = document.getElementById("close-modal")
     const modal = document.getElementById("modal")
@@ -6,4 +10,3 @@ function closeModal() {
         modal.classList.toggle("show-modal")
     })
 }
-closeModal()
