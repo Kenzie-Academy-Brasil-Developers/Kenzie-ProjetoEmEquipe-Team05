@@ -6,9 +6,13 @@ import { createModalRegisterPet } from "../../scripts/modalRegisterPet.js"
 import { createModalDeleteAccount } from "../../scripts/modalDeleteAccount.js";
 import { closeModal } from "../../scripts/closeModal.js";
 import { validateLocal } from "../../scripts/localStorage.js";
+import { changeToDark, checkTheme } from "../../scripts/darkmode.js";
 
 /* Declarations */
 const getmyPets = await getAllMyPets(localStorage.getItem('kenzieAdopt'))
+const openHeader = document.getElementById("open-header-btn")
+const closeHeader = document.getElementById("close-header")
+const darkButton = document.querySelector(".dark-mode")
 
 /* Call to Action */
 updateProfile()
@@ -16,7 +20,22 @@ updateUser()
 registerNewPet()
 closeModal()
 deleteAccount()
+checkTheme()
 
+/* Event Listeners */
+openHeader.addEventListener("click", () => {
+    const header = document.querySelector('.header')
+    header.classList.toggle('header-close')
+})
+
+closeHeader.addEventListener("click", () => {
+    const header = document.querySelector('.header')
+    header.classList.toggle('header-close')
+})
+
+darkButton.addEventListener("click", () => {
+    changeToDark()
+})
 
 /* Code */
 await getmyPets.forEach(element => {

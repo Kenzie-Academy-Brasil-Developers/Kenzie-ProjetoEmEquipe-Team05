@@ -8,12 +8,8 @@
 .header-position {
   display: flex;
   align-items: center;
-<<<<<<< HEAD
   padding: 24px 60px;
   background-color: var(--color-grey-6);
-=======
-  background-color: var(--color-grey-7);
->>>>>>> 3d8ed10a1382e710fec075a35aa5ef89cb41ecff
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
 }
 
@@ -43,6 +39,7 @@
   align-items: center;
   gap: 24px;
   position: relative;
+  height: fit-content;
 }
 
 #close-header {
@@ -89,9 +86,20 @@
 .header-footer {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-end;
   width: 100%;
+}
+
+.header-footer button {
+  height: 100%;
+  padding: 0px 48px;
+}
+
+#logout-btn {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
 }
 
 @keyframes openHeader {
@@ -151,4 +159,12 @@
 .header-menu {
   width: 32px;
   height: 32px;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: start;
+  gap: 24px;
 }

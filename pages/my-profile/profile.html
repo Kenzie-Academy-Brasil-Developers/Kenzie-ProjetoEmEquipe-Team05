@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../styles/modal.css" />
     <link rel="stylesheet" href="../../styles/cards.css" />
     <link rel="stylesheet" href="../../styles/toastfy.css" />
+    <link rel="stylesheet" href="../../styles/darkMode.css" />
     <link rel="stylesheet" href="./profile.css" />
     <title>Kenzie - Profile</title>
   </head>
@@ -52,11 +53,43 @@
       </div>
     </div>
 
+    <!-- Header Button -->
+    <div id="open-header-btn">
+      <img class="profile-img" src="../../src/user.png" alt="" />
+      <img class="header-menu" src="../../src/icon _menu.svg" alt="" />
+    </div>
+
+    <!-- Header -->
+    <header class="header header-close">
+      <div class="header-head">
+        <button id="close-header">
+          <img src="../../src/close-black.svg" alt="" />
+        </button>
+        <h1 class="title-1-bold" style="color: var(--color-brand-3)">
+          KenziePets
+        </h1>
+        <img class="profile-img" src="../../src/user.png" alt="" />
+      </div>
+      <div class="header-content">
+        <h2
+          class="title-1-bold"
+          style="color: var(--color-brand-3); font-size: 24px"
+        >
+          Faça Login ou Registre-se!
+        </h2>
+        <button class="button-brand" id="button-login">Login</button>
+        <button class="button-brand" id="button-register">Registre-se</button>
+      </div>
+      <div class="header-footer">
+        <img class="dark-mode" src="../../src/moon.svg" alt="" id="theme-btn" />
+      </div>
+    </header>
+
     <!-- User Profile & Card Wrapper -->
     <div class="container">
       <!-- User Profile -->
       <div class="user-profile">
-        <img class="profile-img" id="profile-img" src="" alt="" />
+        <img class="profile-image" id="profile-img" src="" alt="" />
         <div class="user-data">
           <div class="user-data-header">
             <h1 class="title-1-bold" style="color: var(--color-brand-3)">
@@ -101,5 +134,6 @@
   </body>
 
   <!-- Scripts -->
+  <script type="module" src="../../scripts/header.js"></script>
   <script type="module" src="./profile.js"></script>
 </html>
