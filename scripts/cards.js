@@ -1,7 +1,7 @@
 /* Export */
 export {
     horizontalCard,
-    verticalCard
+    verticalCard,
 }
 
 /* Import */
@@ -9,9 +9,8 @@ import { createModalUpdatePet } from "./modalUpdatePet.js"
 import { createAdoption, getAllPets } from "./requests.js";
 
 /* Code */
-async function verticalCard() {
-    const pets = await getAllPets()
-    pets.forEach(element => {
+async function verticalCard(arr) {
+    arr.forEach(element => {
         const ul = document.querySelector("#ul-pets")
         const liPets = document.createElement("li")
         const imgPets = document.createElement("img")

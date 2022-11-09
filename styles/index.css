@@ -2,6 +2,9 @@
   margin: 105px 350px;
 }
 
+.card-wrapper{
+    margin: 40px 350px;
+}
 .card-vertical {
   background-color: var(--color-grey-7);
 }
