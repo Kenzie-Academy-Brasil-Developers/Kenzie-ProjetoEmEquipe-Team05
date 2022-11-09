@@ -182,7 +182,6 @@ async function getAllPets() {
             method: "GET",
         })
         const response = await request.json()
-
         return response
 
     } catch (error) {
