@@ -1,11 +1,11 @@
-.dark-mode-page:root{
-     /* ---------------- Colors ----------------*/
+.dark-mode-page:root {
+  /* ---------------- Colors ----------------*/
   /* Color Brand */
-  --color-brand-1: rgba(44, 168, 182, 1);
+  --color-brand-1: rgba(25, 100, 108, 1);
   --color-brand-2: rgba(31, 126, 136, 1);
-  --color-brand-3: rgba(25, 100, 108, 1);
+  --color-brand-3: rgba(44, 168, 182, 1);
   --color-brand-input: rgba(44, 168, 182, 0.5);
-  --disabled-button:  rgba(25, 100, 108, 0.601);
+  --disabled-button: rgba(25, 100, 108, 0.601);
 
   /* Color Grey */
   --color-grey-1: #f2f2f2;
@@ -16,10 +16,11 @@
   --color-grey-6: #212529;
   --color-grey-7: #191c1f;
 
+  /* Color Default */
+  --color-default:var(--color-grey-7)
 }
 
-.dark-mode-page{
-    background-color: var(--color-grey-7);
-    color: var(--color-grey-1);
+.dark-mode-page {
+  background-color: var(--color-grey-7);
+  color: var(--color-grey-1);
 }
-
