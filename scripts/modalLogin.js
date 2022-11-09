@@ -75,4 +75,8 @@ function createModalLogin() {
         }
         loginRequest(userInfo)
     })
+
+    addEventListener('storage', e => {
+        console.log('storage')
+    })
 }

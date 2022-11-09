@@ -83,14 +83,18 @@
         <img class="dark-mode" src="./src/moon.svg" alt="" id="theme-btn" />
       </div>
     </header>
-
-    <!-- Main + Card Wrapper -->
     <main>
-      <option value=""></option>
+      <div class="container-filtro">
+        <div class="box-filtro">
+          <select class="select-box" name="selecinar espécie">
+            <option class="hidden" value="">Todos</option>
+          </select>
+            <button class="button-brand">Buscar</button>
+        </div>
+      </div>
       <ul class="card-wrapper" id="ul-pets"></ul>
     </main>
   </body>
-
   <!-- Scripts -->
   <script type="module" src="./scripts/index.js"></script>
   <script type="module" src="./scripts/header.js"></script>

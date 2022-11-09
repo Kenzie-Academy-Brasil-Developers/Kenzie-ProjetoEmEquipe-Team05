@@ -40,9 +40,8 @@ async function loginRequest(body) {
         const response = await request.json()
         if (request.ok) {
             localStorage.setItem("kenzieAdopt", response.token)
-            setTimeout(() => {
-                window.location.href = "/pages/my-profile/profile.html"
-            }, 1000)
+            window.location.href = '.'
+            createToastfySuccess("Login Efetuado com Sucésso")
         } else {
 
             createToastfyFailed("Usuário ou senha inválidos")
@@ -182,7 +181,6 @@ async function getAllPets() {
             method: "GET",
         })
         const response = await request.json()
-
         return response
 
     } catch (error) {

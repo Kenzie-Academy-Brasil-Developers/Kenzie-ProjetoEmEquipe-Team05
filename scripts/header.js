@@ -6,7 +6,6 @@ const local = localStorage.getItem('kenzieAdopt')
 
 /* Check */
 if (local) {
-    console.log('oi')
     updateUser(local)
 }
 
@@ -17,7 +16,6 @@ async function updateUser(uuid) {
     const profileImage = document.querySelectorAll('.profile-img')
 
     const elementArr = await getAllMyProfile(uuid)
-    console.log(elementArr)
 
     headerContent.innerHTML = ''
     profileImage.forEach( e => {
@@ -59,4 +57,9 @@ async function updateUser(uuid) {
 
     editProfile.innerText = 'Editar Perfil'
     logout.src = '../../src/account logout_.svg'
+
+    logout.addEventListener('click', e => {
+        localStorage.removeItem("kenzieAdopt")
+        window.location.href = "."
+    })
 }
