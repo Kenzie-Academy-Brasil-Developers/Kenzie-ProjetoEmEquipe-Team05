@@ -48,7 +48,6 @@ async function createUser(body) {
         if (request.ok) {
             bodyPage.appendChild(createToastfySuccess("Usuário criado com sucesso"))
             setTimeout(() => window.location.href = "../index.html" , 4000)
-
         } else {
             bodyPage.appendChild(createToastfyFailed("Nao foi possivel criar usuário"))
         }
