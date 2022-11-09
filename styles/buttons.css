@@ -15,6 +15,21 @@
   background-color: var(--color-brand-2);
 }
 
+.button-brand-2 {
+  padding: 0.25rem 1rem;
+  background-color: var(--color-brand-1);
+  color: var(--color-default);
+  width: fit-content;
+  height: fit-content;
+  border-radius: var(--border-radius-round);
+  font-size: var(--font-size-4);
+  font-weight: var(--semi-bold);
+}
+
+.button-brand-2:hover {
+  background-color: var(--color-brand-2);
+}
+
 /* Button Brand Outline */
 .button-brand-outline {
   padding: 0.25rem 1rem;
@@ -73,7 +88,7 @@
   background-color: var(--color-alert);
   color: var(--color-default);
 }
-#button-filtro{
+.button-filtro{
   border-radius: 4px;
   font-size: 1.3rem;
   background: none;
@@ -81,7 +96,12 @@
   outline: 1px solid var(--color-brand-1);
   color: var(--color-brand-1);
 }
-#button-filtro:hover{
+.button-filtro:hover{
   color: var(--color-grey-7);
   background-color: var(--color-brand-1);
+}
+#theme-btn{
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
 }

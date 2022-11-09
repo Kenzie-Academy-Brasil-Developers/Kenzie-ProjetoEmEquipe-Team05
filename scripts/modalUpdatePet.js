@@ -1,5 +1,11 @@
+/* Export */
+export { createModalUpdatePet }
 
-function createModalUpdatePet() {
+/* Import */
+import { updatePet } from "./requests.js"
+
+/* Code */
+function createModalUpdatePet(id) {
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Atualizar pet"
 
@@ -41,5 +47,15 @@ function createModalUpdatePet() {
             }
         })
     })
+
+    updatePetButton.addEventListener('click', (e) => {
+        e.preventDefault()
+        const newPetInfo = {
+            name: inputPetName.value,
+            bread: inputPetBreed.value,
+            species: inputPetSpecie.value,
+            avatar_url: inputPetAvatar.value,
+        }
+        updatePet(localStorage.getItem("kenzieAdopt"), id, newPetInfo)
+    })
 }
-createModalUpdatePet()

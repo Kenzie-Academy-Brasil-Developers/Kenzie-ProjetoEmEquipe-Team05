@@ -47,6 +47,9 @@ button {
   /* Color Alert */
   --color-alert: #EA534A;
 
+    /* Color confirm */
+    --color-confirm: #00FF00;
+
   /* Color Default */
   --color-default: #ffffff;
 

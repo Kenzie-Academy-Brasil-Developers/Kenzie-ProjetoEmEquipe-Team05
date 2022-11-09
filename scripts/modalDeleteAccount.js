@@ -1,5 +1,10 @@
+/* Import */
+import { deleteProfile } from "./requests.js"
+
+/* Export */
 export { createModalDeleteAccount }
 
+/* Code */
 function createModalDeleteAccount() {
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Deseja mesmo deletar sua conta?"
@@ -13,4 +18,16 @@ function createModalDeleteAccount() {
     deleteAccountButton.innerText = "Quero deletar minha conta"
     deleteAccountButton.classList = "button-alert-outline"
     inputList.append(neverMindButton, deleteAccountButton)
+
+    const token = localStorage.getItem("kenzieAdopt")
+    deleteAccountButton.addEventListener('click', (e) => {
+        e.preventDefault()
+        deleteProfile(token)
+    })
+
+    neverMindButton.addEventListener('click', (e) => {
+        e.preventDefault()
+        const modal = document.getElementById("modal")
+        modal.classList.toggle('show-modal')
+    })
 }

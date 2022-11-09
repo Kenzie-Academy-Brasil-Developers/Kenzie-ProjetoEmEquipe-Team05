@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/globalStyles.css" />
+    <link rel="stylesheet" href="./styles/darkMode.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/buttons.css" />
     <link rel="stylesheet" href="./styles/inputs.css" />
@@ -13,11 +14,12 @@
     <link rel="stylesheet" href="./styles/modal.css" />
     <link rel="stylesheet" href="./styles/cards.css" />
     <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/toastfy.css" />
     <title>Kenzie</title>
   </head>
   <body>
-    <!-- Modal Template -->
-     <div class="modal-wrapper">
+    <!-- Modal -->
+    <div class="modal-wrapper" id="modal">
       <div class="modal">
         <svg
           id="close-modal"
@@ -48,30 +50,51 @@
           </div>
         </div>
       </div>
-    </div> 
-    <header class="header-position">
-      <h1> KenziePets</h1>
-      <button class="button-brand" id="button-login">Login</button>
-  </header>
-  <main>
-    <div class="container-filtro">
-      <div class="div-select">
-        <div class="select-box">
-          <p>species</p>
-          <img class="setaSelect" src="./src/seta.png" alt="selecinar espécie">
-        </div>
-        <button class="button-brand">Buscar</button>
-        <div id="div-back-select-off">
-          <div class="card-buttons-filtro">
-          </div>
+    </div>
+
+    <!-- Header Button -->
+    <div id="open-header-btn">
+      <img class="profile-img" src="./src/user.png" alt="" />
+      <img class="header-menu" src="./src/icon _menu.svg" alt="">
+    </div>
+
+    <!-- Header -->
+    <header class="header header-close">
+      <div class="header-head">
+        <button id="close-header">
+          <img src="./src/close-black.svg" alt="">
+        </button>
+        <h1 class="title-1-bold" style="color: var(--color-brand-3)">
+          KenziePets
+        </h1>
+        <img class="profile-img" src="./src/user.png" alt="" />
+      </div>
+      <div class="header-content">
+        <h2
+          class="title-1-bold"
+          style="color: var(--color-brand-3); font-size: 24px"
+        >
+          Faça Login ou Registre-se!
+        </h2>
+        <button class="button-brand" id="button-login">Login</button>
+        <button class="button-brand" id="button-register">Registre-se</button>
+      </div>
+      <div class="header-footer">
+        <img class="dark-mode" src="/src/moon.svg" alt="" id="theme-btn" />
+      </div>
+    </header>
+    <main>
+      <div class="container-filtro">
+        <div class="box-filtro">
+          <select class="select-box" name="selecinar espécie">
+            <option class="hidden" value="">espécie</option>
+          </select>
+            <button class="button-brand">Buscar</button>
         </div>
       </div>
-    </div>
-      <ul class="card-wrapper" id="ul-pets">
-      </ul>
-  </main>
+      <ul class="card-wrapper" id="ul-pets"></ul>
+    </main>
   </body>
-  <script type="module" src="./scripts/modalRegisterPet.js"></script>
+  <!-- Scripts -->
   <script type="module" src="./scripts/index.js"></script>
-  <!--<script type="module" src="./scripts/requests.js"></script>-->
 </html>
