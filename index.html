@@ -83,17 +83,26 @@
         <img class="dark-mode" src="./src/moon.svg" alt="" id="theme-btn" />
       </div>
     </header>
-    <main>
-      <div class="container-filtro">
-        <div class="box-filtro">
-          <select class="select-box" name="selecinar espécie">
-            <option class="hidden" value="">espécie</option>
-          </select>
-            <button class="button-brand">Buscar</button>
+    <aside class="asside-topo">
+      <div class="div-asside">
+          <h1>KenziePets</h1>
+        <div class="container-filtro">
+          <div class="box-filtro">
+            <select class="select-box" name="selecinar espécie">
+              <option class="hidden" value="">Todos</option>
+            </select>
+              <button class="button-brand">Buscar</button>
+          </div>
         </div>
       </div>
-      <ul class="card-wrapper" id="ul-pets"></ul>
+    </aside>
+   <div class="container">
+    <main>
+      <div class="conteiner-warpes">
+        <ul class="card-wrapper" id="ul-pets"></ul>
+      </div>
     </main>
+   </div>
   </body>
   <!-- Scripts -->
   <script type="module" src="./scripts/index.js"></script>
