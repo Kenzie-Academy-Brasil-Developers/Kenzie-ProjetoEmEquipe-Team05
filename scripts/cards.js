@@ -22,8 +22,13 @@ async function verticalCard() {
         liPets.classList.add("card-vertical")
         imgPets.classList.add("card-header-vertical")
         headerLi.classList.add("card-body")
-
-        imgPets.src = element.avatar_url
+        console.log(imgPets)
+      
+        function addListeners(xhr) {
+            xhr.addEventListener('loadstart', handleEvent);
+            xhr.addEventListener('load', handleEvent);
+        }
+        imgPets.src =  verifyPhoto(element) 
         h2NamePet.innerText = element.name
         pSpecie.innerText = element.species
 
