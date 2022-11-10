@@ -8,7 +8,6 @@
   gap: 64px;
   padding: 0% 10% 10% 10%;
 }
-
 .user-profile {
   position: relative;
   display: flex;
@@ -88,7 +87,7 @@
   .header-menu{
     display: none;
   }
-  .div-asside-profile{
+  .div-aside-profile{
     width: 90%;
   }
 }
