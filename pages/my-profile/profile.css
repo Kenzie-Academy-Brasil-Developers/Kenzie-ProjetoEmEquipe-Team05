@@ -89,10 +89,3 @@
     display: none;
   }
 }
-
-@media only screen and (max-width: 991px) {
-  .card-horizontal {
-    display: flex;
-    flex-direction: column;
-  }
-}
