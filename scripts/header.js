@@ -36,7 +36,7 @@ async function updateHeader(uuid) {
     myPets.href = ''
     myPets.addEventListener('click', e => {
       e.preventDefault()
-      window.location.assign('/pages/my-profile/profile.html')
+      window.location.assign('./pages/my-profile/profile.html')
     })
     myPets.innerText = 'Ir para Meus Pets'
     myPets.style.width = '100%'
