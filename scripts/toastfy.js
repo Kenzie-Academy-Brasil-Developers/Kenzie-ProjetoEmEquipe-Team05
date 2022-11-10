@@ -14,6 +14,7 @@ function createToastfySuccess(message) {
 
     p.innerText = message
     p.className = "text-3-semibold"
+    p.style = "color: white"
 
     div.className = "toast-green"
     div.appendChild(p)
@@ -27,6 +28,7 @@ function createToastfyFailed(message) {
 
     p.innerText = message
     p.className = "text-3-semibold"
+    p.style = "color: white"
 
     div.className = "toast-red"
     div.appendChild(p)

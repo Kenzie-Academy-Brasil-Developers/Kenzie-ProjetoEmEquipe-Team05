@@ -55,20 +55,18 @@
 
     <!-- Header Button -->
     <div id="open-header-btn">
-      <img class="profile-img" src="../../src/user.png" alt="" />
-      <img class="header-menu" src="../../src/icon _menu.svg" alt="" />
+      <img class="profile-img" src="/src/user.png" alt="" />
+      <img class="header-menu" src="/src/menu.svg" alt="" />
     </div>
 
     <!-- Header -->
     <header class="header header-close">
       <div class="header-head">
-        <button id="close-header">
-          <img src="../../src/close-black.svg" alt="" />
-        </button>
-        <h1 class="title-1-bold" style="color: var(--color-brand-3)">
+          <img id="close-btn" src="/src/close-black.svg" alt="" />
+        <a href="/index.html" class="title-1-bold" style="color: var(--color-brand-3)">
           KenziePets
-        </h1>
-        <img class="profile-img" src="../../src/user.png" alt="" />
+        </a>
+        <img class="profile-img" src="/src/user.png" alt="" />
       </div>
       <div class="header-content">
         <h2
@@ -81,9 +79,14 @@
         <button class="button-brand" id="button-register">Registre-se</button>
       </div>
       <div class="header-footer">
-        <img class="dark-mode" src="../../src/moon.svg" alt="" id="theme-btn" />
+        <img class="dark-mode" src="/src/moon.svg" alt="" id="theme-btn" />
       </div>
     </header>
+    <aside class="aside-top">
+      <div class="div-aside-profile">
+          <a href="/index.html" class="title-1-bold">KenziePets</a>
+      </div>
+    </aside>
 
     <!-- User Profile & Card Wrapper -->
     <div class="container">
@@ -134,6 +137,5 @@
   </body>
 
   <!-- Scripts -->
-  <script type="module" src="../../scripts/header.js"></script>
   <script type="module" src="./profile.js"></script>
 </html>

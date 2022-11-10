@@ -1,7 +1,7 @@
 /* Toast Fail */
 .toast-red {
   background-color: var(--color-alert);
-  border-radius: 10px;
+  border-radius: var(--border-radius-2);
   color: var(--color-default);
   font-size: var(--font-size-5);
   font-weight: var(--bold);
@@ -11,16 +11,16 @@
   width: 250px;
   height: fit-content;
   position: fixed;
-  animation: toastIt 4000ms ease-in forwards;
+  animation: toastIt 4000ms ease-in-out forwards;
   padding: 1.25rem 2.25rem;
   top: 0;
-  left: 30px;
+  right: 30px;
 }
 
 /* Toast Success */
 .toast-green {
   background-color: var(--color-confirm);
-  border-radius: 10px;
+  border-radius: var(--border-radius-2);
   color: var(--color-default);
   font-size: var(--font-size-5);
   font-weight: var(--bold);
@@ -30,28 +30,28 @@
   width: 250px;
   height: fit-content;
   position: fixed;
-  animation: toastIt 4000ms ease-in forwards;
+  animation: toastIt 4000ms ease-in-out forwards;
   padding: 1.25rem 2.25rem;
   top: 0;
-  left: 30px;
+  right: 30px;
 }
 
 /* Keyframes */
 @keyframes toastIt {
   0% {
-    left: 30px;
+    right: 30;
     top: -150px;
   }
   25% {
-    left: 30px;
+    right: 30;
     top: 10px;
   }
   50% {
-    left: 30px;
+    right: 30;
     top: 10px;
   }
   100% {
-    left: 30px;
+    right: 30;
     top: -150px;
   }
 }

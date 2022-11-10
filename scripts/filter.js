@@ -16,6 +16,7 @@ export function filterEspecies(arr){
     novaArr.forEach((element) => {
         const option = document.createElement("option")
         option.classList = "button-filtro"
+        option.classList = 'text-2-regular'
         option.innerText = element
         option.value = element
         select.appendChild(option)

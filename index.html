@@ -52,18 +52,14 @@
       </div>
     </div>
 
-    <!-- Header Button -->
     <div id="open-header-btn">
       <img class="profile-img" src="./src/user.png" alt="" />
-      <img class="header-menu" src="./src/icon _menu.svg" alt="">
+      <img id="menu-icon" class="header-menu" src="./src/menu.svg" alt="" />
     </div>
 
-    <!-- Header -->
     <header class="header header-close">
       <div class="header-head">
-        <button id="close-header">
-          <img src="./src/close-black.svg" alt="">
-        </button>
+        <img src="./src/close-black.svg" alt="" id="close-btn" />
         <h1 class="title-1-bold" style="color: var(--color-brand-3)">
           KenziePets
         </h1>
@@ -83,19 +79,24 @@
         <img class="dark-mode" src="./src/moon.svg" alt="" id="theme-btn" />
       </div>
     </header>
-    <main>
-      <div class="container-filtro">
-        <div class="box-filtro">
-          <select class="select-box" name="selecinar espécie">
-            <option class="hidden" value="">Todos</option>
-          </select>
-            <button class="button-brand">Buscar</button>
-        </div>
+
+    <!-- Aside -->
+    <aside class="aside-top">
+      <div class="div-aside">
+        <h1 style="color: var(--color-brad-1); cursor: default;">KenziePets</h1>
+        <select class="select-box text-2-regular">
+          <option class="hidden" value="">Selecione uma Espécie</option>
+        </select>
       </div>
-      <ul class="card-wrapper" id="ul-pets"></ul>
-    </main>
+    </aside>
+    <div class="container">
+      <main>
+        <div class="container-wrapper">
+          <ul class="card-wrapper" id="ul-pets"></ul>
+        </div>
+      </main>
+    </div>
   </body>
   <!-- Scripts -->
   <script type="module" src="./scripts/index.js"></script>
-  <script type="module" src="./scripts/header.js"></script>
 </html>

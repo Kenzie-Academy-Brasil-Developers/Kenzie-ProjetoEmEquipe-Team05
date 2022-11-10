@@ -2,16 +2,27 @@
 export {
     horizontalCard,
     verticalCard,
+    renderCards
 }
 
 /* Import */
 import { createModalUpdatePet } from "./modalUpdatePet.js"
-import { createAdoption, getAllPets } from "./requests.js";
+import { createAdoption, getAllMyPets, getAllPets } from "./requests.js";
 
 /* Code */
+async function renderCards() {
+    const wrapper = document.querySelector('.card-wrapper')
+    wrapper.innerHTML = ''
+    const getmyPets = await getAllMyPets(localStorage.getItem('kenzieAdopt'))
+    await getmyPets.forEach(element => {
+        horizontalCard(element)
+    })
+}
+
 async function verticalCard(arr) {
+    const ul = document.querySelector("#ul-pets")
+    ul.innerHTML = ''
     arr.forEach(element => {
-        const ul = document.querySelector("#ul-pets")
         const liPets = document.createElement("li")
         const imgPets = document.createElement("img")
         const headerLi = document.createElement("div")
@@ -29,7 +40,7 @@ async function verticalCard(arr) {
         headerLi.append(h2NamePet, pSpecie)
 
         const user = localStorage.getItem("kenzieAdopt")
-        if (user) {
+        if (user && user !== '') {
             const btnAdopt = document.createElement("button")
             btnAdopt.classList.add("button-brand-2")
             btnAdopt.innerText = "Adotar"
