@@ -52,6 +52,9 @@ button {
   /* Color Default */
   --color-default: #ffffff;
 
+  /* Color-Text-default */
+  --color-text-default: #191c1f;
+
   /* ---------------- Fonts ----------------*/
   /* Font Size */
   --font-logo: 28px;
@@ -88,6 +91,10 @@ button {
   --container: 0 10%;
 }
 
+* {
+  color: var(--color-text-default);
+}
+
 .container {
   padding: 0% 10%;
 }
@@ -95,5 +102,9 @@ button {
 @media only screen and (max-width: 991px) {
   .container {
     padding: 0;
+  }
+
+  ::root {
+    --font-size-1: 28px;
   }
 }

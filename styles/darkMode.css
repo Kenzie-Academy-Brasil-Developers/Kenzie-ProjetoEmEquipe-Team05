@@ -18,7 +18,10 @@
   --color-grey-asside: #33363a;
 
   /* Color Default */
-  --color-default:var(--color-grey-7)
+  --color-default: #191c1f;
+
+  /* Color Text Default */
+  --color-text-default: #f2f2f2;
 }
 
 .dark-mode-page {

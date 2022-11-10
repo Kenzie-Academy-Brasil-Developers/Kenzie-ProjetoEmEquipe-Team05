@@ -1,8 +1,3 @@
-body {
-  background-color: var(--color-brand-3);
-  padding: none;
-}
-
 .container {
   margin-top: 200px;
   height: 100%;
