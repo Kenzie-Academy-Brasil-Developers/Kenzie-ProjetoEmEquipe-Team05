@@ -3,7 +3,6 @@ export {
     horizontalCard,
     verticalCard,
     renderCards
-
 }
 
 /* Import */
@@ -11,6 +10,16 @@ import { createModalUpdatePet } from "./modalUpdatePet.js"
 import { createAdoption, getAllPets } from "./requests.js";
 
 /* Code */
+async function renderCards() {
+    const wrapper = document.querySelector('.card-wrapper')
+    wrapper.innerHTML = ''
+    const getmyPets = await getAllMyPets(localStorage.getItem('kenzieAdopt'))
+    await getmyPets.forEach(element => {
+        horizontalCard(element)
+    })
+}
+
+
 async function verticalCard() {
     const pets = await getAllPets()
     pets.forEach(element => {
@@ -24,7 +33,7 @@ async function verticalCard() {
         liPets.classList.add("card-vertical")
         imgPets.classList.add("card-header-vertical")
         headerLi.classList.add("card-body")
-        console.log(imgPets)
+        console.log(element)
         
         function verifyPhoto(element){
             if(imgPets === false){
