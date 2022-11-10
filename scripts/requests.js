@@ -237,8 +237,6 @@ async function createAdoption(token, body) {
         })
         if (request.ok) {
             createToastfySuccess("Adoção criada com sucesso")
-            horizontalCard()
-
         } else {
             createToastfyFailed("Não foi possivel criar a adoçâo")
         }
