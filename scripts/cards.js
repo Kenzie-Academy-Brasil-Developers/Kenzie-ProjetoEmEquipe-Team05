@@ -1,15 +1,6 @@
-/* Export */
-export {
-    horizontalCard,
-    verticalCard,
-    renderCards
-}
-
-/* Import */
 import { createModalUpdatePet } from "./modalUpdatePet.js"
 import { createAdoption, getAllMyPets, getAllPets } from "./requests.js";
 
-/* Code */
 async function renderCards() {
     const wrapper = document.querySelector('.card-wrapper')
     wrapper.innerHTML = ''
@@ -121,4 +112,10 @@ function checkAdopt(boolean) {
     } else {
         return "Não"
     }
+}
+
+export {
+    horizontalCard,
+    verticalCard,
+    renderCards
 }

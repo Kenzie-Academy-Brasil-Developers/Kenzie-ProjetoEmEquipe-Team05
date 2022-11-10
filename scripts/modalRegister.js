@@ -1,11 +1,6 @@
-/* Export */
-export  { createRegisterModal }
-
-/* Import */
 import { createUser } from "./requests.js"
 import { createModalLogin } from "./modalLogin.js"
 
-/* Code */
 function createRegisterModal() {
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Cadastrar"
@@ -72,3 +67,5 @@ function createRegisterModal() {
         createUser(userInfo)
     })
 }
+
+export  { createRegisterModal }

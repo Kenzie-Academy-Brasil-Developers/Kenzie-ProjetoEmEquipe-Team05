@@ -1,19 +1,9 @@
-/* Export */
-export {
-    changeToDark,
-    changeButton,
-    checkTheme,
-    changeLogout
-}
-
-/* Declarations */
 const html = document.querySelector("html")
 const theme = "dark-mode-page"
 const local = localStorage.getItem('kenzieAdopt')
 
 let darkMode
 
-/* Code */
 function changeToDark() {
     darkMode = !darkMode
     html.classList.toggle(theme)
@@ -79,4 +69,11 @@ function checkTheme() {
         changeLogout()
         changeMenu()
     }
+}
+
+export {
+    changeToDark,
+    changeButton,
+    checkTheme,
+    changeLogout
 }

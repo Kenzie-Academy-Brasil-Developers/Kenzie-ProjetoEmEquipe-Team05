@@ -1,10 +1,5 @@
-/* Import */
-import { createPet } from "./requests.js"
-
-/* Export */
 export { createModalRegisterPet } 
 
-/* Code */
 function createModalRegisterPet() {
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Cadastrar pet"
@@ -63,3 +58,5 @@ function createModalRegisterPet() {
         
     })
 }
+
+import { createPet } from "./requests.js"

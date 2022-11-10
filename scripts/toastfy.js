@@ -1,13 +1,5 @@
-/* Export */
-export {
-    createToastfySuccess,
-    createToastfyFailed
-}
-
-/* Declarations */
 const body = document.querySelector("body")
 
-/* Code */
 function createToastfySuccess(message) {
     const div = document.createElement("div")
     const p = document.createElement("p")
@@ -34,4 +26,9 @@ function createToastfyFailed(message) {
     div.appendChild(p)
 
     body.appendChild(div)
+}
+
+export {
+    createToastfySuccess,
+    createToastfyFailed
 }
