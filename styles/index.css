@@ -1,3 +1,7 @@
+.card-vertical {
+  background-color: var(--color-grey-7);
+}
+
 .card-body {
   padding: 0px 14px;
 }
@@ -16,47 +20,67 @@
   height: 50%;
   border-radius: 4px 4px 0px 0px;
 }
-
-.container-wrapper {
+.conteiner-warpes{
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 40px;
 }
-
-.container {
-  padding: 0% 20%;
+.container{
+  padding:  0% 20%;
 }
-
 @media only screen and (max-width: 500px) {
-  .card-vertical {
+  .card-vertical{
     width: 100%;
   }
-  .card-wrapper {
-    width: fit-content;
+  .card-wrapper{
+    width: 80%;
   }
-  .box-filtro {
-    width: fit-content;
+  .box-filtro{
+    width: 80%;
   }
-  .container {
+  .container{
     padding: 0% 5%;
   }
 }
-@media only screen and (max-width: 991px) {
-  .card-vertical {
+@media only screen and (max-width:991px){
+  .card-vertical{
     width: 100%;
   }
-  .card-wrapper {
+  .card-wrapper{
     width: 70%;
   }
-  .box-filtro {
+  .box-filtro{
     width: 70%;
+    gap: 0;
   }
-  #menu-icon {
+  .header-menu{
     display: none;
   }
-  .div-aside h1 {
-    display: none;
+  .div-asside{
+    width: 90%;
   }
+  .div-asside > h1{
+    font-size: 150%;
+  }
+  .box-filtro{
+    height: 20px;
+    margin: 0 0 0 0;
+  }
+  .select-box{
+    padding: 1px;
+  }
+  .container-filtro{
+    width: min-content;
+  }
+  .box-filtro > button{
+    background:  none;
+    width: 0;
+    height: 0;
+    border: none;
+    padding: 0 0 0 0;
+    font-size: 0;
+  }
+
 }

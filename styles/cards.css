@@ -91,15 +91,14 @@
   justify-content: flex-start;
   align-items: flex-end;
 }
-.container-filtro{  display: flex;
-  align-items: center;
-  justify-content: center;
+.container-filtro{  
+  display: flex;
 }
 .select-box{
   outline: 1px solid var(--color-brand-1);
   padding-left: 1rem;
   padding-right: 1rem;
-  width: fit-content;
+  width: min-content;
   height: 100%;
   border-radius: var(--border-radius-round);
   color: var(--color-brand-1);
@@ -112,6 +111,7 @@
 .box-filtro{
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .hidden{
@@ -121,26 +121,22 @@
   font-size: 0;
 }
 
-.aside-top {
+.asside-topo{
   width: 100%;
-  padding: 1rem 20%;
-  height: fit-content;
+  height: 80px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--color-grey-6);
   background-color: var(--color-grey-asside);
-  justify-content: space-between;
 }
 
-.div-aside {
-  width: 100%;
+.div-asside {
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: var(--color-brand-3);
-  flex-direction: row;
 }
 
 .div-aside-profile {
@@ -150,15 +146,4 @@
   align-items: center;
   justify-content: space-between;
   color: var(--color-brand-3);
-}
-
-@media only screen and (max-width: 991px) {
-  .aside-top {
-    padding: 1rem 2.5%;
-  }
-
-  .div-aside {
-    justify-content: center;
-    align-items: center;
-  }
 }

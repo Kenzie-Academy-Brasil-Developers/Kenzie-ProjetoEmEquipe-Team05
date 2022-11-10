@@ -36,6 +36,7 @@ function changeButton() {
 function changeClose() {
     const buttonCycle = ["/src/close.svg", "/src/close-black.svg"]
     const button = document.getElementById("close-btn")
+    console.log(button)
 
     darkMode
         ? button.src = buttonCycle[0]
