@@ -21,6 +21,9 @@
 
   /* Color Text Default */
   --color-text-default: #f2f2f2;
+
+  /* Color aside */
+  --color-aside: #33363a;
 }
 
 .dark-mode-page {
