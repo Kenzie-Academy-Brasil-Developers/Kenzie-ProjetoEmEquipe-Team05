@@ -65,6 +65,10 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
+.aside-top {
+  justify-content: flex-end;
+}
 @media only screen and (max-width:991px) {
   .container{
     justify-content: center;

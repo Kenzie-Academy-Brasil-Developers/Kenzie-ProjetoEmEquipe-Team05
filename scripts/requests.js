@@ -117,9 +117,10 @@ async function deleteProfile(token) {
                 "Authorization": `Bearer ${token}`
             }
         })
-        const response = await request.json()
-        window.location.href = "/index.html"
-
+        if(request.ok) {
+            window.location.href = "/index.html"
+            localStorage.removeItem('kenzieAdopt')
+        }
     } catch (error) {
         console.log(error)
     }
