@@ -1,5 +1,5 @@
 import { createModalUpdatePet } from "./modalUpdatePet.js"
-import { createAdoption, getAllMyPets, getAllPets } from "./requests.js";
+import { createAdoption, getAllMyPets } from "./requests.js";
 
 async function renderCards() {
     const wrapper = document.querySelector('.card-wrapper')
@@ -32,18 +32,21 @@ async function verticalCard(arr) {
 
         const user = localStorage.getItem("kenzieAdopt")
         if (user && user !== '') {
-            const btnAdopt = document.createElement("button")
-            btnAdopt.classList.add("button-brand-2")
-            btnAdopt.innerText = "Adotar"
-            headerLi.append(btnAdopt)
-
-            btnAdopt.addEventListener('click', (e) => {
-                e.preventDefault()
-                const petId = {
-                    pet_id: element.id
-                }
-                createAdoption(localStorage.getItem("kenzieAdopt"), petId)
-            })
+            if(element.available_for_adoption == true) {
+                liPets.classList.add('adoptable')
+                const btnAdopt = document.createElement("button")
+                btnAdopt.classList.add("button-brand-2")
+                btnAdopt.innerText = "Adotar"
+                headerLi.append(btnAdopt)
+    
+                btnAdopt.addEventListener('click', (e) => {
+                    e.preventDefault()
+                    const petId = {
+                        pet_id: element.id
+                    }
+                    createAdoption(localStorage.getItem("kenzieAdopt"), petId)
+                })
+            }
         }
 
         liPets.append(imgPets, headerLi)

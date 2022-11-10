@@ -25,3 +25,19 @@ openHeader.addEventListener("click", () => {
     const header = document.querySelector('.header')
     header.classList.toggle('header-close')
 })
+
+const adopt = document.getElementById('adopt')
+adopt.addEventListener('click', (e) => {
+    const cards = document.querySelectorAll('.card-vertical')
+    if(adopt.innerText == 'Para Adoção'){
+        adopt.innerText = 'Mostrar Todos'
+    } else {
+        adopt.innerText = 'Para Adoção'
+    }
+    cards.forEach( e => {
+        const eclass = e.className
+        if(!eclass.includes('adoptable')) {
+            e.classList.toggle('hidden')
+        }
+    })
+})
