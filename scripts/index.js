@@ -6,6 +6,7 @@ import { verticalCard } from "./cards.js";
 import { filterEspecies } from "./filter.js";
 import { updateHeader } from "./header.js";
 import { renewEventListeners } from "./eventListenersRenew.js";
+import { createToastfyFailed } from "./toastfy.js";
 
 const openHeader = document.getElementById("open-header-btn")
 const local = localStorage.getItem('kenzieAdopt')
@@ -27,17 +28,26 @@ openHeader.addEventListener("click", () => {
 })
 
 const adopt = document.getElementById('adopt')
+
 adopt.addEventListener('click', (e) => {
+    const alocal = localStorage.getItem('kenzieAdopt')
     const cards = document.querySelectorAll('.card-vertical')
-    if(adopt.innerText == 'Para Adoção'){
-        adopt.innerText = 'Mostrar Todos'
-    } else {
-        adopt.innerText = 'Para Adoção'
-    }
-    cards.forEach( e => {
-        const eclass = e.className
-        if(!eclass.includes('adoptable')) {
-            e.classList.toggle('hidden')
+    if(alocal && alocal !== '') {
+        if(adopt.innerText == 'Para Adoção'){
+            adopt.innerText = 'Mostrar Todos'
+        } else {
+            adopt.innerText = 'Para Adoção'
         }
-    })
+
+        cards.forEach( e => {
+            const eclass = e.className
+            if(!eclass.includes('adoptable')) {
+                e.classList.toggle('hidden')
+            }
+        })
+    } else {
+        createToastfyFailed('Faça Login para ver os pets disponiveis para adoção.')
+    }
+
+
 })
