@@ -55,6 +55,9 @@ button {
   /* Color-Text-default */
   --color-text-default: #191c1f;
 
+  /* Color asside */
+  --color-aside: #f2f2f2;
+
   /* ---------------- Fonts ----------------*/
   /* Font Size */
   --font-logo: 28px;
