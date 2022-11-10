@@ -22,4 +22,10 @@ select {
   font-size: var(--font-size-4);
   font-weight: var(--regular);
   background-color: transparent;
+  width: 40%;
+}
+
+select option {
+  color: var(--color-brand-1);
+  background-color: var(--color-default);
 }

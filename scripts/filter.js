@@ -4,7 +4,6 @@ export function filterEspecies(arr){
     const newArr =[]
     const select = document.querySelector(".select-box")
     const ul = document.querySelector("#ul-pets")
-    console.log(select)
     arr.forEach(element => newArr.push(element.species));
     
     const novaArr = ["Todos"] 
@@ -13,13 +12,16 @@ export function filterEspecies(arr){
             novaArr.push(este)
         }
     });
+
     novaArr.forEach((element) => {
         const option = document.createElement("option")
         option.classList = "button-filtro"
+        option.classList = 'text-2-regular'
         option.innerText = element
         option.value = element
         select.appendChild(option)
     })
+
     select.addEventListener("change",(event)=>{
         if(event.target.value == "Todos"){
             ul.innerHTML =""
@@ -33,6 +35,3 @@ export function filterEspecies(arr){
     
 
 }
-        // option.addEventListener("click",(event)=>{
-        //     
-        // })
