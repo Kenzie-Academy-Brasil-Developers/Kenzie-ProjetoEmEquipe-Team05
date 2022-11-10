@@ -13,7 +13,7 @@ function createModalUpdateProfile() {
     const inputUsername = document.createElement("input")
     const inputAvatar = document.createElement("input")
     const updateButton = document.createElement("button")
-
+    const arrayInput = [inputUsername, inputAvatar]
     inputList.innerHTML = ''
 
     inputUsername.type = "text" 
@@ -23,6 +23,24 @@ function createModalUpdateProfile() {
     updateButton.innerText = "Atualizar"
     updateButton.classList = "button-brand text-1-semibold"
     
+    if (inputUsername.value == "" || inputAvatar.value == "") {
+        updateButton.disabled = true
+        updateButton.classList.add("disabled-button")
+    }
+
+    arrayInput.forEach(input => {
+        input.addEventListener('input', () => {
+            if (inputUsername.value == "" || inputAvatar.value == "") {
+                updateButton.disabled = true
+                updateButton.classList.add("disabled-button")
+            }
+            else{
+                updateButton.disabled = false
+                updateButton.classList.remove("disabled-button")
+            }
+        })
+    })
+
     inputList.append(inputUsername, inputAvatar, updateButton)
 
     updateButton.addEventListener('click', async (e) => {
