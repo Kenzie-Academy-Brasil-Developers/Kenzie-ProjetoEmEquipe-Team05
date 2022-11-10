@@ -1,28 +1,51 @@
 /* Imports */
-import { horizontalCard } from "../../scripts/cards.js";
-import { getAllMyPets, getAllMyProfile } from "../../scripts/requests.js";
+import { getAllMyProfile } from "../../scripts/requests.js";
 import { createModalUpdateProfile } from "../../scripts/modalUpdateProfile.js"
 import { createModalRegisterPet } from "../../scripts/modalRegisterPet.js"
 import { createModalDeleteAccount } from "../../scripts/modalDeleteAccount.js";
 import { closeModal } from "../../scripts/closeModal.js";
-import { validateLocal } from "../../scripts/localStorage.js";
+import { changeToDark, checkTheme } from "../../scripts/darkmode.js";
+import { updateHeader } from "../../scripts/header.js";
+import { renderCards } from "../../scripts/cards.js";
 
 /* Declarations */
-const getmyPets = await getAllMyPets(localStorage.getItem('kenzieAdopt'))
+const openHeader = document.getElementById("open-header-btn")
+const closeHeader = document.getElementById("close-btn")
+const darkButton = document.querySelector(".dark-mode")
+const local = localStorage.getItem('kenzieAdopt')
+
 
 /* Call to Action */
+if (local && local !== '') {
+    await updateHeader(local)
+} else {
+    window.location.href = '/index.html'
+}
+
+renderCards()
 updateProfile()
 updateUser()
 registerNewPet()
 closeModal()
 deleteAccount()
+checkTheme()
 
-
-/* Code */
-await getmyPets.forEach(element => {
-    horizontalCard(element)
+/* Event Listeners */
+openHeader.addEventListener("click", () => {
+    const header = document.querySelector('.header')
+    header.classList.toggle('header-close')
 })
 
+closeHeader.addEventListener("click", () => {
+    const header = document.querySelector('.header')
+    header.classList.toggle('header-close')
+})
+
+darkButton.addEventListener("click", () => {
+    changeToDark()
+})
+
+/* Code */
 async function updateProfile() {
     const myProfile = await getAllMyProfile(localStorage.getItem('kenzieAdopt'))
     const userImg = document.getElementById('profile-img')
@@ -69,4 +92,3 @@ function deleteAccount() {
         createModalDeleteAccount()
     })
 }
-

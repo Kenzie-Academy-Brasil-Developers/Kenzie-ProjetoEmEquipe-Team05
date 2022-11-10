@@ -20,11 +20,15 @@ export {
 }
 
 /* Imports */
+import { horizontalCard, renderCards, verticalCard } from "./cards.js"
+import { updateHeader } from "./header.js"
 import { createModalLogin } from "./modalLogin.js"
 import { createToastfySuccess, createToastfyFailed } from "./toastfy.js"
 
 /* Declarations */
+const modalWrapper = document.querySelector('.modal-wrapper')
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com"
+const pets = await getAllPets()
 
 /* -------------------------------- Requests -------------------------------- */
 /* Login */
@@ -40,9 +44,9 @@ async function loginRequest(body) {
         const response = await request.json()
         if (request.ok) {
             localStorage.setItem("kenzieAdopt", response.token)
-            setTimeout(() => {
-                window.location.href = "/pages/my-profile/profile.html"
-            }, 1000)
+            updateHeader(response.token)
+            verticalCard(pets)
+            createToastfySuccess("Login Efetuado com Sucesso")
         } else {
 
             createToastfyFailed("Usuário ou senha inválidos")
@@ -62,13 +66,8 @@ async function createUser(body) {
             },
             body: JSON.stringify(body)
         })
-        const inputList = document.getElementById("input-list")
-        inputList.innerHTML = ""
-        createModalLogin()
-
         if (request.ok) {
-           createToastfySuccess("Usuário criado com sucesso")
-            setTimeout(() => window.location.href = "../index.html", 4000)
+            createToastfySuccess("Usuário criado com sucesso")
         } else {
             createToastfyFailed("Nao foi possivel criar usuário")
         }
@@ -120,12 +119,9 @@ async function updateProfile(token, body) {
             },
             body: JSON.stringify(body)
         })
-        window.location.href = "/pages/my-profile/profile.html"
-
         if (request.ok) {
+            modalWrapper.classList.toggle('show-modal')
             createToastfySuccess("Usuário alterado com sucesso")
-            //verificar qual pagina ira
-            //setTimeout(() => { window.location.href("/pages/") }, 4000)
 
         } else {
             createToastfyFailed("Não foi possivel alterar usuário")
@@ -145,8 +141,7 @@ async function deleteProfile(token) {
             }
         })
         const response = await request.json()
-        console.log(response)
-        window.location.href = "../../index.html"
+        window.location.href = "/index.html"
 
     } catch (error) {
         console.log(error)
@@ -164,8 +159,10 @@ async function createPet(token, body) {
             },
             body: JSON.stringify(body)
         })
-        
+
         if (request.ok) {
+            renderCards()
+            modalWrapper.classList.toggle('show-modal')
             createToastfySuccess("Pet criado com sucesso")
         } else {
             createToastfyFailed("Não foi possivel criar o pet")
@@ -182,7 +179,6 @@ async function getAllPets() {
             method: "GET",
         })
         const response = await request.json()
-
         return response
 
     } catch (error) {
@@ -217,12 +213,9 @@ async function updatePet(token, id, body) {
             },
             body: JSON.stringify(body)
         })
-        window.location.href = "./profile.html"
-
         if (request.ok) {
             createToastfySuccess("Pet atualizado com sucesso")
-            //verificar qual pagina ira
-            //setTimeout(() => { window.location.href("/pages/") }, 4000)
+            renderCards()
 
         } else {
             createToastfyFailed("Não foi possivel atualizar o pet")
@@ -243,8 +236,7 @@ async function deletePetById(token, id) {
         })
         if (request.ok) {
             createToastfySuccess("Pet deletado com sucesso")
-            //verificar qual pagina ira
-            //setTimeout(() => { window.location.href("/pages/") }, 4000)
+            renderCards()
 
         } else {
             createToastfyFailed("Não foi possivel deletar o pet")
@@ -268,8 +260,7 @@ async function createAdoption(token, body) {
         })
         if (request.ok) {
             createToastfySuccess("Adoção criada com sucesso")
-            //verificar qual pagina ira
-            //setTimeout(() => { window.location.href("/pages/") }, 4000)
+            horizontalCard()
 
         } else {
             createToastfyFailed("Não foi possivel criar a adoçâo")
@@ -341,9 +332,6 @@ async function updateAdoption(token, id, body) {
 
         if (request.ok) {
             createToastfySuccess("Adoção criada com sucesso")
-            //verificar qual pagina ira
-            //setTimeout(() => { window.location.href("/pages/") }, 4000)
-
         } else {
             createToastfyFailed("Não foi possivel criar a adoçâo")
         }
@@ -363,9 +351,6 @@ async function deleteAdoption(token, id) {
         })
         if (request.ok) {
             createToastfySuccess("Adoção deletada com sucesso")
-            //verificar qual pagina ira
-            //setTimeout(() => { window.location.href("/pages/") }, 4000)
-
         } else {
             createToastfyFailed("Não foi deletar a adoçâo")
         }

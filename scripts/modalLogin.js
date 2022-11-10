@@ -67,12 +67,18 @@ function createModalLogin() {
     })
 
     /* Add Event Listener to Submit Button */
-    loginButton.addEventListener('click', (e) => {
+    loginButton.addEventListener('click', async (e) => {
         e.preventDefault()
+        const modalWrapper = document.querySelector('.modal-wrapper')
         const userInfo = {
             email: inputEmail.value,
             password: inputPassword.value
         }
-        loginRequest(userInfo)
+        await loginRequest(userInfo)
+        modalWrapper.classList.toggle('show-modal')
+    })
+
+    addEventListener('storage', e => {
+        console.log('storage')
     })
 }

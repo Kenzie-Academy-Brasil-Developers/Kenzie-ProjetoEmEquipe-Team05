@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../styles/modal.css" />
     <link rel="stylesheet" href="../../styles/cards.css" />
     <link rel="stylesheet" href="../../styles/toastfy.css" />
+    <link rel="stylesheet" href="../../styles/darkMode.css" />
     <link rel="stylesheet" href="./profile.css" />
     <title>Kenzie - Profile</title>
   </head>
@@ -52,11 +53,46 @@
       </div>
     </div>
 
+    <!-- Header Button -->
+    <div id="open-header-btn">
+      <img class="profile-img" src="/src/user.png" alt="" />
+      <img class="header-menu" src="/src/menu.svg" alt="" />
+    </div>
+
+    <!-- Header -->
+    <header class="header header-close">
+      <div class="header-head">
+          <img id="close-btn" src="/src/close-black.svg" alt="" />
+        <a href="/index.html" class="title-1-bold" style="color: var(--color-brand-3)">
+          KenziePets
+        </a>
+        <img class="profile-img" src="/src/user.png" alt="" />
+      </div>
+      <div class="header-content">
+        <h2
+          class="title-1-bold"
+          style="color: var(--color-brand-3); font-size: 24px"
+        >
+          Faça Login ou Registre-se!
+        </h2>
+        <button class="button-brand" id="button-login">Login</button>
+        <button class="button-brand" id="button-register">Registre-se</button>
+      </div>
+      <div class="header-footer">
+        <img class="dark-mode" src="/src/moon.svg" alt="" id="theme-btn" />
+      </div>
+    </header>
+    <aside class="aside-top">
+      <div class="div-aside-profile">
+          <a href="/index.html" class="title-1-bold">KenziePets</a>
+      </div>
+    </aside>
+
     <!-- User Profile & Card Wrapper -->
     <div class="container">
       <!-- User Profile -->
       <div class="user-profile">
-        <img class="profile-img" id="profile-img" src="" alt="" />
+        <img class="profile-image" id="profile-img" src="" alt="" />
         <div class="user-data">
           <div class="user-data-header">
             <h1 class="title-1-bold" style="color: var(--color-brand-3)">

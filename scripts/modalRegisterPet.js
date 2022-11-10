@@ -60,5 +60,6 @@ function createModalRegisterPet() {
         }
 
         createPet(localStorage.getItem("kenzieAdopt"), petInfo)
+        
     })
 }

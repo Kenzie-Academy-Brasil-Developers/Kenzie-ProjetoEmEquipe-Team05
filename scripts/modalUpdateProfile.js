@@ -14,6 +14,8 @@ function createModalUpdateProfile() {
     const inputAvatar = document.createElement("input")
     const updateButton = document.createElement("button")
 
+    inputList.innerHTML = ''
+
     inputUsername.type = "text" 
     inputUsername.placeholder = "Nome"
     inputAvatar.type = "text"
@@ -23,12 +25,12 @@ function createModalUpdateProfile() {
     
     inputList.append(inputUsername, inputAvatar, updateButton)
 
-    updateButton.addEventListener('click', (e) => {
+    updateButton.addEventListener('click', async (e) => {
         e.preventDefault()
         const newUserInfo = {
             avatar_url: inputAvatar.value,
             name: inputUsername.value,
         }
-        updateProfile(localStorage.getItem("kenzieAdopt"), newUserInfo)
+       await updateProfile(localStorage.getItem("kenzieAdopt"), newUserInfo)
     })
 }

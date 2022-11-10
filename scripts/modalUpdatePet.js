@@ -57,5 +57,7 @@ function createModalUpdatePet(id) {
             avatar_url: inputPetAvatar.value,
         }
         updatePet(localStorage.getItem("kenzieAdopt"), id, newPetInfo)
+        const modalWrapper = document.querySelector('.modal-wrapper')
+        modalWrapper.classList.toggle('show-modal')
     })
 }
