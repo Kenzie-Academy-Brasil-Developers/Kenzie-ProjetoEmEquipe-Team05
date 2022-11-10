@@ -24,16 +24,10 @@ async function verticalCard() {
         liPets.classList.add("card-vertical")
         imgPets.classList.add("card-header-vertical")
         headerLi.classList.add("card-body")
-        console.log(element)
-        
-        function verifyPhoto(element){
-            if(imgPets === false){
-                return "http://www.magnumcomunicacao.com.py/img/prod_place.jpg" 
-            } else{
-                return element.avatar_url
-            }
-        }
-        imgPets.src =  verifyPhoto(element) 
+    
+
+       
+        imgPets.src =  element.avatar_url
         h2NamePet.innerText = element.name
         pSpecie.innerText = element.species
 

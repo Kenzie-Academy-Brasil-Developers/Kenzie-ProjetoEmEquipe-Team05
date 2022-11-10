@@ -33,7 +33,7 @@ function createRegisterModal() {
     const anchor = document.getElementById("anchor-click")
     anchor.addEventListener('click', (e) => {
         e.preventDefault()
-        inputList.innerHTML = ""
+        inputList.innerHTML = "" 
         createModalLogin()
     })
 
