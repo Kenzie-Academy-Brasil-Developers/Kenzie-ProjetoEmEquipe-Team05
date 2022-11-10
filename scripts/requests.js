@@ -236,6 +236,7 @@ async function createAdoption(token, body) {
             body: JSON.stringify(body)
         })
         if (request.ok) {
+            await verticalCard(await getAllPets())
             createToastfySuccess("Adoção criada com sucesso")
         } else {
             createToastfyFailed("Não foi possivel criar a adoçâo")

@@ -33,6 +33,7 @@ async function verticalCard(arr) {
         const user = localStorage.getItem("kenzieAdopt")
         if (user && user !== '') {
             if(element.available_for_adoption == true) {
+                liPets.classList.add('adoptable')
                 const btnAdopt = document.createElement("button")
                 btnAdopt.classList.add("button-brand-2")
                 btnAdopt.innerText = "Adotar"
