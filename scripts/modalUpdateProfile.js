@@ -1,10 +1,5 @@
-/* Export */
-export {createModalUpdateProfile}
-
-/* Import */
 import { updateProfile } from "./requests.js"
 
-/* Code */
 function createModalUpdateProfile() {
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Atualizar perfil"
@@ -52,3 +47,5 @@ function createModalUpdateProfile() {
        await updateProfile(localStorage.getItem("kenzieAdopt"), newUserInfo)
     })
 }
+
+export {createModalUpdateProfile}

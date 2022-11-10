@@ -1,10 +1,5 @@
-/* Export */
-export { createModalUpdatePet }
-
-/* Import */
 import { updatePet } from "./requests.js"
 
-/* Code */
 function createModalUpdatePet(id) {
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Atualizar pet"
@@ -61,3 +56,5 @@ function createModalUpdatePet(id) {
         modalWrapper.classList.toggle('show-modal')
     })
 }
+
+export { createModalUpdatePet }

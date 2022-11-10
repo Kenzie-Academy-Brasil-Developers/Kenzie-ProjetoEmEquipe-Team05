@@ -1,10 +1,5 @@
-/* Import */
 import { deleteProfile } from "./requests.js"
 
-/* Export */
-export { createModalDeleteAccount }
-
-/* Code */
 function createModalDeleteAccount() {
     const modalTitle = document.getElementById("modal-title")
     modalTitle.innerText = "Deseja mesmo deletar sua conta?"
@@ -31,3 +26,5 @@ function createModalDeleteAccount() {
         modal.classList.toggle('show-modal')
     })
 }
+
+export { createModalDeleteAccount }

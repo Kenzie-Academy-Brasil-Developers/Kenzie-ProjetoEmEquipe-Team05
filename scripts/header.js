@@ -1,15 +1,13 @@
-export { updateHeader, resetHeader }
-
 import { verticalCard } from "./cards.js"
 import { changeToDark, checkTheme } from "./darkmode.js"
 import { createModalLogin } from "./modalLogin.js"
 import { createRegisterModal } from "./modalRegister.js"
 import { createModalUpdateProfile } from "./modalUpdateProfile.js"
 import { getAllMyProfile, getAllPets } from "./requests.js"
-import { createToastfyFailed, createToastfySuccess } from "./toastfy.js"
+import { createToastfySuccess } from "./toastfy.js"
 
 const location = window.location.href
-/* Code */
+
 async function updateHeader(uuid) {
   const headerContent = document.querySelector('.header-content')
   const headerFooter = document.querySelector('.header-footer')
@@ -145,3 +143,5 @@ function resetHeader() {
 
   checkTheme()
 }
+
+export { updateHeader, resetHeader }

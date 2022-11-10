@@ -1,36 +1,12 @@
-/* Export */
-export {
-    loginRequest,
-    createUser,
-    getAllUsers,
-    getAllMyProfile,
-    updateProfile,
-    deleteProfile,
-    createPet,
-    getAllPets,
-    getAllMyPets,
-    updatePet,
-    deletePetById,
-    createAdoption,
-    getAllAdoptions,
-    getAdoptionById,
-    getMyAdoptions,
-    updateAdoption,
-    deleteAdoption
-}
-
-/* Imports */
 import { horizontalCard, renderCards, verticalCard } from "./cards.js"
 import { updateHeader } from "./header.js"
 import { createModalLogin } from "./modalLogin.js"
 import { createToastfySuccess, createToastfyFailed } from "./toastfy.js"
 
-/* Declarations */
 const modalWrapper = document.querySelector('.modal-wrapper')
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com"
 const pets = await getAllPets()
 
-/* -------------------------------- Requests -------------------------------- */
 /* Login */
 async function loginRequest(body) {
     try {
@@ -358,4 +334,24 @@ async function deleteAdoption(token, id) {
     } catch (error) {
         console.log(error)
     }
+}
+
+export {
+    loginRequest,
+    createUser,
+    getAllUsers,
+    getAllMyProfile,
+    updateProfile,
+    deleteProfile,
+    createPet,
+    getAllPets,
+    getAllMyPets,
+    updatePet,
+    deletePetById,
+    createAdoption,
+    getAllAdoptions,
+    getAdoptionById,
+    getMyAdoptions,
+    updateAdoption,
+    deleteAdoption
 }
