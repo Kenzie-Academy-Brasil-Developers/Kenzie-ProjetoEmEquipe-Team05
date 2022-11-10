@@ -6,7 +6,7 @@ import { createModalLogin } from "./modalLogin.js"
 import { createRegisterModal } from "./modalRegister.js"
 import { createModalUpdateProfile } from "./modalUpdateProfile.js"
 import { getAllMyProfile, getAllPets } from "./requests.js"
-import { createToastfyFailed } from "./toastfy.js"
+import { createToastfyFailed, createToastfySuccess } from "./toastfy.js"
 
 const location = window.location.href
 /* Code */
@@ -80,7 +80,7 @@ async function updateHeader(uuid) {
     const pets = await getAllPets()
     localStorage.removeItem("kenzieAdopt")
     verticalCard(pets)
-    createToastfyFailed('Logout Efetuado')
+    createToastfySuccess('Logout Efetuado')
     await resetHeader()
     if(location.includes('/profile.html')) {
       window.location.assign('/index.html')

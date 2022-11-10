@@ -67,6 +67,7 @@ async function createUser(body) {
             body: JSON.stringify(body)
         })
         if (request.ok) {
+            createModalLogin()
             createToastfySuccess("Usuário criado com sucesso")
         } else {
             createToastfyFailed("Nao foi possivel criar usuário")
@@ -237,7 +238,6 @@ async function deletePetById(token, id) {
         if (request.ok) {
             createToastfySuccess("Pet deletado com sucesso")
             renderCards()
-
         } else {
             createToastfyFailed("Não foi possivel deletar o pet")
         }
