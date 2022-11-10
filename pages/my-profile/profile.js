@@ -19,7 +19,7 @@ const local = localStorage.getItem('kenzieAdopt')
 if (local && local !== '') {
     await updateHeader(local)
 } else {
-    window.location.href = '/index.html'
+    window.location.assign('../../index.html')
 }
 
 renderCards()
