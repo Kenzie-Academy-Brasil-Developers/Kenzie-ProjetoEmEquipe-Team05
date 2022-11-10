@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/globalStyles.css" />
+    <link rel="stylesheet" href="./styles/darkMode.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/buttons.css" />
     <link rel="stylesheet" href="./styles/inputs.css" />
@@ -13,10 +14,13 @@
     <link rel="stylesheet" href="./styles/modal.css" />
     <link rel="stylesheet" href="./styles/cards.css" />
     <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/toastfy.css" />
+    <link rel="stylesheet" href="./styles/aside.css">
     <title>Kenzie</title>
   </head>
   <body>
-    <div class="modal-wrapper">
+    <!-- Modal -->
+    <div class="modal-wrapper" id="modal">
       <div class="modal">
         <svg
           id="close-modal"
@@ -33,17 +37,66 @@
         </svg>
         <div class="modal-container">
           <div class="modal-content" id="modal-content">
-            <div class="modal-header"><p style="color: var(--color-brand-3);" class="title-1-bold" id="modal-title"></p></div>
-            <form class="modal-body" id="input-list">
-            </form>
+            <div class="modal-header">
+              <p
+                style="color: var(--color-brand-3)"
+                class="title-1-bold"
+                id="modal-title"
+              ></p>
+            </div>
+            <form class="modal-body" id="input-list"></form>
             <div class="modal-footer" id="modal-footer">
               <p class="text-4-regular" id="modal-footer-text"></p>
             </div>
           </div>
         </div>
       </div>
-    </div> 
+    </div>
+
+    <div id="open-header-btn">
+      <img class="profile-img" src="./src/user.png" alt="" />
+      <img id="menu-icon" class="header-menu" src="./src/menu.svg" alt="" />
+    </div>
+
+    <header class="header header-close">
+      <div class="header-head">
+        <img src="./src/close-black.svg" alt="" id="close-btn" />
+        <h1 class="title-1-bold" style="color: var(--color-brand-3)">
+          KenziePets
+        </h1>
+        <img class="profile-img" src="./src/user.png" alt="" />
+      </div>
+      <div class="header-content">
+        <h2
+          class="title-1-bold"
+          style="color: var(--color-brand-3); font-size: 24px"
+        >
+          Faça Login ou Registre-se!
+        </h2>
+        <button class="button-brand" id="button-login">Login</button>
+        <button class="button-brand" id="button-register">Registre-se</button>
+      </div>
+      <div class="header-footer">
+        <img class="dark-mode" src="./src/moon.svg" alt="" id="theme-btn" />
+      </div>
+    </header>
+    <!-- Aside -->
+    <aside class="aside-top">
+      <div class="div-aside">
+        <h1 style="color: var(--color-brad-1); cursor: default;">KenziePets</h1>
+        <select class="select-box text-2-regular">
+          <option class="hidden" value="">Selecione uma Espécie</option>
+        </select>
+      </div>
+    </aside>
+    <div class="container">
+      <main>
+        <div class="container-wrapper">
+          <ul class="card-wrapper" id="ul-pets"></ul>
+        </div>
+      </main>
+    </div
   </body>
-  <script type="module" src="./scripts/modal/modalRegister.js"></script>
+  <!-- Scripts -->
   <script type="module" src="./scripts/index.js"></script>
 </html>

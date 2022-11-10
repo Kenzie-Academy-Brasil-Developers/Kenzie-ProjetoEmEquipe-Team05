@@ -1,4 +1,5 @@
-export  { createRegisterModal }
+import { createUser } from "./requests.js"
+import { createModalLogin } from "./modalLogin.js"
 
 function createRegisterModal() {
     const modalTitle = document.getElementById("modal-title")
@@ -10,6 +11,8 @@ function createRegisterModal() {
     const inputPassword = document.createElement("input")
     const inputAvatar = document.createElement("input")
     const registerButton = document.createElement("button")
+
+    inputList.innerHTML = ''
 
     inputUsername.type = "text" 
     inputUsername.placeholder = "Nome"
@@ -23,10 +26,16 @@ function createRegisterModal() {
     registerButton.classList = "button-brand text-1-semibold"
 
     inputList.append(inputUsername, inputEmail, inputPassword, inputAvatar, registerButton)
-
+ 
     const modalFooterText = document.getElementById("modal-footer-text")
-    modalFooterText.innerHTML = `Não tem cadastro? <a href="">Clique aqui</a> para se cadastrar`
+    modalFooterText.innerHTML = `Já tem cadastro? <a href="" id="anchor-click">Clique aqui</a> para logar`
 
+    const anchor = document.getElementById("anchor-click")
+    anchor.addEventListener('click', (e) => {
+        e.preventDefault()
+        inputList.innerHTML = ""
+        createModalLogin()
+    })
 
     if (inputUsername.value == "" || inputEmail.value == "" || inputPassword.value == "") {
         registerButton.disabled = true
@@ -41,9 +50,22 @@ function createRegisterModal() {
                 registerButton.classList.add("disabled-button")
             }
             else{
-                registerButton.disabled == false
+                registerButton.disabled = false
                 registerButton.classList.remove("disabled-button")
             }
         })
     })
+    console.log(registerButton)
+    registerButton.addEventListener('click', (e) => {
+        e.preventDefault()
+        const userInfo = {
+            name: inputUsername.value,
+            email: inputEmail.value,
+            password: inputPassword.value,
+            avatar_url: inputAvatar.value
+        }
+        createUser(userInfo)
+    })
 }
+
+export  { createRegisterModal }

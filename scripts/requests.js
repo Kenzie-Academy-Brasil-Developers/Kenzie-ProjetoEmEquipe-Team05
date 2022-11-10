@@ -1,9 +1,12 @@
-/* Export */
-export { loginRequest, createUser, getAllUsers, getAllMyProfile, updateProfile, deleteProfile, createPet, getAllPets, getAllMyPets, updatePet, deletePetById, createAdoption, getAllAdoptions, getAdoptionById, getMyAdoptions, updateAdoption, deleteAdoption }
+import { horizontalCard, renderCards, verticalCard } from "./cards.js"
+import { updateHeader } from "./header.js"
+import { createModalLogin } from "./modalLogin.js"
+import { createToastfySuccess, createToastfyFailed } from "./toastfy.js"
 
+const modalWrapper = document.querySelector('.modal-wrapper')
 const baseUrl = "https://m2-api-adot-pet.herokuapp.com"
+const pets = await getAllPets()
 
-/* ------------------------------------------------------------------ Requests ------------------------------------------------------------------ */
 /* Login */
 async function loginRequest(body) {
     try {
@@ -15,10 +18,17 @@ async function loginRequest(body) {
             body: JSON.stringify(body)
         })
         const response = await request.json()
-        console.log(response)
+        if (request.ok) {
+            localStorage.setItem("kenzieAdopt", response.token)
+            updateHeader(response.token)
+            verticalCard(pets)
+            createToastfySuccess("Login Efetuado com Sucesso")
+        } else {
 
+            createToastfyFailed("Usuário ou senha inválidos")
+        }
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -32,11 +42,14 @@ async function createUser(body) {
             },
             body: JSON.stringify(body)
         })
-        const response = await request.json()
-        console.log(response)
-
+        if (request.ok) {
+            createModalLogin()
+            createToastfySuccess("Usuário criado com sucesso")
+        } else {
+            createToastfyFailed("Nao foi possivel criar usuário")
+        }
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -49,10 +62,10 @@ async function getAllUsers(token) {
             }
         })
         const response = await request.json()
-        console.log(response)
+        return response
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -65,10 +78,11 @@ async function getAllMyProfile(token) {
             }
         })
         const response = await request.json()
-        console.log(response)
+
+        return response
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -82,11 +96,16 @@ async function updateProfile(token, body) {
             },
             body: JSON.stringify(body)
         })
-        const response = await request.json()
-        console.log(response)
+        if (request.ok) {
+            modalWrapper.classList.toggle('show-modal')
+            createToastfySuccess("Usuário alterado com sucesso")
+
+        } else {
+            createToastfyFailed("Não foi possivel alterar usuário")
+        }
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -98,11 +117,12 @@ async function deleteProfile(token) {
                 "Authorization": `Bearer ${token}`
             }
         })
-        const response = await request.json()
-        console.log(response)
-
+        if(request.ok) {
+            window.location.href = "/index.html"
+            localStorage.removeItem('kenzieAdopt')
+        }
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -117,11 +137,17 @@ async function createPet(token, body) {
             },
             body: JSON.stringify(body)
         })
-        const response = await request.json()
-        console.log(response)
+
+        if (request.ok) {
+            renderCards()
+            modalWrapper.classList.toggle('show-modal')
+            createToastfySuccess("Pet criado com sucesso")
+        } else {
+            createToastfyFailed("Não foi possivel criar o pet")
+        }
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -130,13 +156,11 @@ async function getAllPets() {
         const request = await fetch(`${baseUrl}/pets`, {
             method: "GET",
         })
-
         const response = await request.json()
-
-        console.log(response)
+        return response
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -149,10 +173,11 @@ async function getAllMyPets(token) {
             }
         })
         const response = await request.json()
-        console.log(response)
+
+        return response
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -166,11 +191,16 @@ async function updatePet(token, id, body) {
             },
             body: JSON.stringify(body)
         })
-        const response = await request.json()
-        console.log(response)
+        if (request.ok) {
+            createToastfySuccess("Pet atualizado com sucesso")
+            renderCards()
+
+        } else {
+            createToastfyFailed("Não foi possivel atualizar o pet")
+        }
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -182,11 +212,15 @@ async function deletePetById(token, id) {
                 "Authorization": `Bearer ${token}`
             }
         })
-        const response = await request.json()
-        console.log(response)
+        if (request.ok) {
+            createToastfySuccess("Pet deletado com sucesso")
+            renderCards()
+        } else {
+            createToastfyFailed("Não foi possivel deletar o pet")
+        }
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -201,11 +235,16 @@ async function createAdoption(token, body) {
             },
             body: JSON.stringify(body)
         })
-        const response = await request.json()
-        console.log(response)
+        if (request.ok) {
+            createToastfySuccess("Adoção criada com sucesso")
+            horizontalCard()
+
+        } else {
+            createToastfyFailed("Não foi possivel criar a adoçâo")
+        }
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -218,10 +257,10 @@ async function getAllAdoptions(token) {
             }
         })
         const response = await request.json()
-        console.log(response)
+        return response
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -234,10 +273,10 @@ async function getAdoptionById(token, id) {
             }
         })
         const response = await request.json()
-        console.log(response)
+        return response
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -250,10 +289,10 @@ async function getMyAdoptions(token) {
             }
         })
         const response = await request.json()
-        console.log(response)
+        return response
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -267,11 +306,15 @@ async function updateAdoption(token, id, body) {
             },
             body: JSON.stringify(body)
         })
-        const response = await request.json()
-        console.log(response)
+
+        if (request.ok) {
+            createToastfySuccess("Adoção criada com sucesso")
+        } else {
+            createToastfyFailed("Não foi possivel criar a adoçâo")
+        }
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
 }
 
@@ -283,10 +326,33 @@ async function deleteAdoption(token, id) {
                 "Authorization": `Bearer ${token}`
             }
         })
-        const response = await request.json()
-        console.log(response)
+        if (request.ok) {
+            createToastfySuccess("Adoção deletada com sucesso")
+        } else {
+            createToastfyFailed("Não foi deletar a adoçâo")
+        }
 
     } catch (error) {
-        console.loge(error)
+        console.log(error)
     }
+}
+
+export {
+    loginRequest,
+    createUser,
+    getAllUsers,
+    getAllMyProfile,
+    updateProfile,
+    deleteProfile,
+    createPet,
+    getAllPets,
+    getAllMyPets,
+    updatePet,
+    deletePetById,
+    createAdoption,
+    getAllAdoptions,
+    getAdoptionById,
+    getMyAdoptions,
+    updateAdoption,
+    deleteAdoption
 }

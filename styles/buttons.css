@@ -3,7 +3,7 @@
 .button-brand {
   padding: 0.25rem 1rem;
   background-color: var(--color-brand-3);
-  color: var(--color-default);
+  color: white;
   width: fit-content;
   height: fit-content;
   border-radius: var(--border-radius-round);
@@ -12,6 +12,21 @@
 }
 
 .button-brand:hover {
+  background-color: var(--color-brand-2);
+}
+
+.button-brand-2 {
+  padding: 0.25rem 1rem;
+  background-color: var(--color-brand-1);
+  color: white;
+  width: fit-content;
+  height: fit-content;
+  border-radius: var(--border-radius-round);
+  font-size: var(--font-size-4);
+  font-weight: var(--semi-bold);
+}
+
+.button-brand-2:hover {
   background-color: var(--color-brand-2);
 }
 
@@ -39,7 +54,7 @@
   background-color: var(--color-brand-1);
   width: fit-content;
   height: fit-content;
-  color: var(--color-default);
+  color: var(--color-text-default);
   border-radius: var(--border-radius-round);
   font-size: var(--font-size-4);
   font-weight: var(--semi-bold);
@@ -49,17 +64,23 @@
   background-color: var(--color-brand-2);
 }
 
+/* Button Disabled */
 .disabled-button {
   cursor: default;
-  background-color: var(--disabled-button) !important;
-  color: var(--color-grey-7) !important;
+  opacity: 50%;
+  /* background-color: var(--disabled-button) !important;
+  color: var(--color-grey-6) !important; */
 }
 
-  /* Button Alert Outline */
+.disabled-button:hover {
+  background-color: var(--color-brand-3);
+}
+
+/* Button Alert Outline */
 .button-alert-outline {
   padding: 0.25rem 1rem;
   background-color: transparent;
-  outline: 1px var(--color-alert);
+  outline: 1px solid var(--color-alert);
   color: var(--color-alert);
   width: fit-content;
   height: fit-content;
@@ -71,5 +92,25 @@
 .button-alert-outline:hover {
   outline: none;
   background-color: var(--color-alert);
-  color: var(--color-default);
+  color: white;
+}
+
+.button-filtro {
+  border-radius: 4px;
+  font-size: 1.3rem;
+  background: none;
+  height: 30px;
+  outline: 1px solid var(--color-brand-1);
+  color: var(--color-brand-1);
+}
+
+.button-filtro:hover {
+  color: var(--color-grey-7);
+  background-color: var(--color-brand-1);
+}
+
+#theme-btn {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
 }
