@@ -81,7 +81,7 @@ async function updateHeader(uuid) {
     createToastfySuccess('Logout Efetuado')
     await resetHeader()
     if(location.includes('/profile.html')) {
-      window.location.assign('/index.html')
+      window.location.assign('../../index.html')
     }
   })
   checkTheme()
@@ -98,7 +98,7 @@ function resetHeader() {
         <h1 class="title-1-bold" style="color: var(--color-brand-3)">
           KenziePets
         </h1>
-        <img class="profile-img" src="/src/user.png" alt="" />
+        <img class="profile-img" src="./src/user.png" alt="" />
       </div>
       <div class="header-content">
         <h2
@@ -111,7 +111,7 @@ function resetHeader() {
         <button class="button-brand" id="button-register">Registre-se</button>
       </div>
       <div class="header-footer">
-        <img class="dark-mode" src="/src/moon.svg" alt="" id="theme-btn" />
+        <img class="dark-mode" src="./src/moon.svg" alt="" id="theme-btn" />
       </div>
     `)
 
