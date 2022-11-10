@@ -8,6 +8,7 @@ import { createModalUpdateProfile } from "./modalUpdateProfile.js"
 import { getAllMyProfile, getAllPets } from "./requests.js"
 import { createToastfyFailed } from "./toastfy.js"
 
+const location = window.location.href
 /* Code */
 async function updateHeader(uuid) {
   const headerContent = document.querySelector('.header-content')
@@ -81,7 +82,7 @@ async function updateHeader(uuid) {
     verticalCard(pets)
     createToastfyFailed('Logout Efetuado')
     await resetHeader()
-    if(uuid && uuid == '') {
+    if(location.includes('/profile.html')) {
       window.location.assign('/index.html')
     }
   })

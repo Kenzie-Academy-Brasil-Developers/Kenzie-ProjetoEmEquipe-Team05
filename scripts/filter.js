@@ -32,6 +32,4 @@ export function filterEspecies(arr){
             verticalCard(array)
         }
     })
-    
-
 }
